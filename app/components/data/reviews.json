@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "name": "Sarah Mitchell",
+    "location": "Manchester",
+    "rating": 5,
+    "bed": "Ottoman Storage Bed",
+    "date": "March 2025",
+    "review": "Absolutely stunning bed. The velvet finish in slate grey is exactly what I wanted and the quality is incredible. You can tell it has been made by hand — every detail is perfect. Delivery was smooth and the team were helpful throughout. Would recommend to anyone.",
+    "verified": true
+  },
+  {
+    "id": 2,
+    "name": "James Thornton",
+    "location": "London",
+    "rating": 5,
+    "bed": "Wingback Bed Frame",
+    "date": "February 2025",
+    "review": "I spent weeks looking for a wingback bed that was actually well made and not just a cheap import. Kingsford Sleep delivered exactly that. The midnight blue velvet is rich and deep, the frame is rock solid. My bedroom looks like a hotel suite now.",
+    "verified": true
+  },
+  {
+    "id": 3,
+    "name": "Emma Clarke",
+    "location": "Edinburgh",
+    "rating": 5,
+    "bed": "Ottoman Storage Bed",
+    "date": "January 2025",
+    "review": "The storage space is massive — I got rid of two under bed storage boxes. The cream linen finish looks beautiful and feels premium. Arrived on time and was assembled quickly. Genuinely the best purchase I have made for my home.",
+    "verified": true
+  },
+  {
+    "id": 4,
+    "name": "David Hargreaves",
+    "location": "Birmingham",
+    "rating": 5,
+    "bed": "Panel Bed Frame",
+    "date": "December 2024",
+    "review": "Ordered the panel bed in charcoal velvet for a super king size. The communication was excellent throughout — I always knew where my order was. The bed itself is beautifully made, very sturdy and looks exactly as described. Great value for a UK handmade product.",
+    "verified": true
+  },
+  {
+    "id": 5,
+    "name": "Rachel Pemberton",
+    "location": "Bristol",
+    "rating": 5,
+    "bed": "Wingback Bed Frame",
+    "date": "November 2024",
+    "review": "I was nervous ordering a bed without seeing it in person but the WhatsApp support was brilliant. They answered all my questions quickly and sent me fabric swatches. The finished bed exceeded my expectations completely. Worth every penny.",
+    "verified": true
+  },
+  {
+    "id": 6,
+    "name": "Michael Forsyth",
+    "location": "Leeds",
+    "rating": 5,
+    "bed": "Ottoman Storage Bed",
+    "date": "October 2024",
+    "review": "Third bed I have bought from Kingsford Sleep now — one for us and two for our rental properties. The quality is always consistent and the turnaround time is impressive for a made to order product. My tenants always comment on how good the beds look.",
+    "verified": true
+  },
+  {
+    "id": 7,
+    "name": "Catherine Hughes",
+    "location": "Cardiff",
+    "rating": 5,
+    "bed": "Panel Bed Frame",
+    "date": "September 2024",
+    "review": "Ordered the double panel bed in blush pink velvet for my daughter's room. She absolutely loves it. The colour is exactly as shown and the quality is far better than anything we found in the high street stores at double the price.",
+    "verified": true
+  },
+  {
+    "id": 8,
+    "name": "Thomas Whitfield",
+    "location": "Newcastle",
+    "rating": 5,
+    "bed": "Wingback Bed Frame",
+    "date": "August 2024",
+    "review": "The emerald green wingback is a statement piece. Everyone who visits comments on it. Solid construction, beautifully upholstered, and the diamond buttoning addon was absolutely worth it. Delivered carefully and set up without any issues.",
+    "verified": true
+  }
+]

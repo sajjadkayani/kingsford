@@ -1,0 +1,336 @@
+{
+  "sizes": [
+    {
+      "id": "single",
+      "label": "Single",
+      "dimensions": "90 × 190 cm",
+      "description": "Perfect for children or single sleepers",
+      "multiplier": 0.8
+    },
+    {
+      "id": "small-double",
+      "label": "Small Double",
+      "dimensions": "120 × 190 cm",
+      "description": "Ideal for smaller rooms",
+      "multiplier": 0.9
+    },
+    {
+      "id": "double",
+      "label": "Double",
+      "dimensions": "135 × 190 cm",
+      "description": "Our most popular size",
+      "multiplier": 1.0
+    },
+    {
+      "id": "king",
+      "label": "King",
+      "dimensions": "150 × 200 cm",
+      "description": "The luxury standard",
+      "multiplier": 1.2
+    },
+    {
+      "id": "super-king",
+      "label": "Super King",
+      "dimensions": "180 × 200 cm",
+      "description": "Maximum space and comfort",
+      "multiplier": 1.4
+    }
+  ],
+
+  "styles": {
+    "ottoman": {
+      "label": "Ottoman",
+      "tagline": "Lift-up storage built in",
+      "basePrice": 599,
+      "availableSizes": [
+        "single",
+        "small-double",
+        "double",
+        "king",
+        "super-king"
+      ],
+      "fabrics": ["velvet", "linen", "chenille", "faux-leather"],
+      "headboards": ["classic", "winged", "low"],
+      "legs": ["chrome", "gold", "wooden" ,"default"],
+      "storage": "lift-up",
+      "showStorage": false,
+      "addons": [
+        "diamond-buttoning",
+        "chrome-feet",
+        "gold-feet",
+        "wooden-feet",
+        "usb-ports",
+        "matching-headboard"
+      ]
+    },
+    "wingback": {
+      "label": "Wingback",
+      "tagline": "Dramatic winged headboard",
+      "basePrice": 799,
+      "availableSizes": [
+        "single",
+        "small-double",
+        "double",
+        "king",
+        "super-king"
+      ],
+      "fabrics": ["velvet", "linen", "faux-leather", "chenille"],
+      "headboards": ["classic-wing", "grand-wing", "low-wing"],
+      "legs": ["chrome", "gold", "wooden" ,"default"],
+      "storage": "none",
+      "showStorage": false,
+      "addons": ["diamond-buttoning", "chrome-feet", "gold-feet", "usb-ports"]
+    },
+    "panel": {
+      "label": "Panel",
+      "tagline": "Clean lines, timeless design",
+      "basePrice": 449,
+      "availableSizes": [
+        "single",
+        "small-double",
+        "double",
+        "king",
+        "super-king"
+      ],
+      "fabrics": ["velvet", "linen", "faux-leather", "chenille"],
+      "headboards": ["classic", "tall", "low"],
+      "legs": ["chrome", "gold", "wooden" ,"default"],
+      "storage": "none",
+      "showStorage": false,
+      "addons": [
+        "diamond-buttoning",
+        "wooden-feet",
+        "chrome-feet",
+        "matching-headboard",
+        "usb-ports"
+      ]
+    },
+    "sleigh": {
+      "label": "Sleigh",
+      "tagline": "Curved elegance, British classic",
+      "basePrice": 649,
+      "availableSizes": [
+        "single",
+        "small-double",
+        "double",
+        "king",
+        "super-king"
+      ],
+      "fabrics": ["velvet", "linen", "faux-leather", "chenille"],
+      "headboards": ["classic-curve", "scroll", "low-curve"],
+      "legs": ["chrome", "gold", "wooden" ,"default"],
+      "storage": "none",
+      "showStorage": false,
+      "addons": ["diamond-buttoning", "chrome-feet", "wooden-feet"]
+    },
+    "divan": {
+      "label": "Divan",
+      "tagline": "Maximum storage, practical luxury",
+      "basePrice": 399,
+      "availableSizes": [
+        "single",
+        "small-double",
+        "double",
+        "king",
+        "super-king"
+      ],
+      "fabrics": ["velvet", "linen", "faux-leather", "chenille"],
+      "headboards": ["classic", "low"],
+      "legs": ["chrome", "gold", "wooden" ,"default"],
+      "storage": "selectable",
+      "showStorage": true,
+      "storageOptions": ["none", "2-drawer", "4-drawer", "ottoman-lift"],
+      "addons": ["usb-ports", "matching-headboard", "chrome-feet"]
+    },
+    "chesterfield": {
+      "label": "Chesterfield",
+      "tagline": "Deep buttons, rich character",
+      "basePrice": 749,
+      "availableSizes": [
+        "single",
+        "small-double",
+        "double",
+        "king",
+        "super-king"
+      ],
+      "fabrics": ["velvet", "linen", "faux-leather", "chenille"],
+      "headboards": ["classic-button", "grand-button", "low-button"],
+      "legs": ["chrome", "gold", "wooden" ,"default"],
+      "storage": "none",
+      "showStorage": false,
+      "addons": ["chrome-feet", "gold-feet", "usb-ports"]
+    },
+    "low-profile": {
+      "label": "Low Profile",
+      "tagline": "Minimal design, maximum impact",
+      "basePrice": 499,
+      "availableSizes": [
+        "single",
+        "small-double",
+        "double",
+        "king",
+        "super-king"
+      ],
+      "fabrics": ["velvet", "linen", "faux-leather", "chenille"],
+      "headboards": ["classic-low", "platform"],
+      "legs": ["chrome", "gold", "wooden" ,"default"],
+      "storage": "none",
+      "showStorage": false,
+      "addons": ["gold-feet", "chrome-feet", "usb-ports"]
+    }
+  },
+
+  "fabrics": {
+    "velvet": {
+      "label": "Velvet",
+      "description": "Rich, soft pile. Luxurious feel.",
+      "texture": "velvet",
+      "colours": [
+        "navy",
+        "cream",
+        "charcoal",
+        "blush",
+        "burgundy",
+        "forest-green",
+        "midnight-blue",
+        "natural",
+        "grey",
+        "white",
+        "sage",
+        "teal",
+        "dusty-rose",
+        "tan",
+        "black",
+        "dark-brown"
+      ]
+    },
+    "linen": {
+      "label": "Linen",
+      "description": "Natural weave. Light and breathable.",
+      "texture": "linen",
+      "colours": [
+        "navy",
+        "cream",
+        "charcoal",
+        "blush",
+        "burgundy",
+        "forest-green",
+        "midnight-blue",
+        "natural",
+        "grey",
+        "white",
+        "sage",
+        "teal",
+        "dusty-rose",
+        "tan",
+        "black",
+        "dark-brown"
+      ]
+    },
+    "chenille": {
+      "label": "Chenille",
+      "description": "Soft textured finish. Warm and inviting.",
+      "texture": "chenille",
+      "colours": [
+        "navy",
+        "cream",
+        "charcoal",
+        "blush",
+        "burgundy",
+        "forest-green",
+        "midnight-blue",
+        "natural",
+        "grey",
+        "white",
+        "sage",
+        "teal",
+        "dusty-rose",
+        "tan",
+        "black",
+        "dark-brown"
+      ]
+    },
+    "faux-leather": {
+      "label": "Faux Leather",
+      "description": "Sleek, modern finish. Easy to clean.",
+      "texture": "faux-leather",
+      "colours": [
+        "navy",
+        "cream",
+        "charcoal",
+        "blush",
+        "burgundy",
+        "forest-green",
+        "midnight-blue",
+        "natural",
+        "grey",
+        "white",
+        "sage",
+        "teal",
+        "dusty-rose",
+        "tan",
+        "black",
+        "dark-brown"
+      ]
+    }
+  },
+
+  "colours": {
+    "navy": { "label": "Navy", "hex": "#1B2A4A" },
+    "cream": { "label": "Cream", "hex": "#F5F0E8" },
+    "charcoal": { "label": "Charcoal", "hex": "#3A3A3A" },
+    "blush": { "label": "Blush Pink", "hex": "#E8C4B8" },
+    "forest-green": { "label": "Forest Green", "hex": "#2D4A3E" },
+    "burgundy": { "label": "Burgundy", "hex": "#6B2737" },
+    "midnight-blue": { "label": "Midnight Blue", "hex": "#1A1F3A" },
+    "natural": { "label": "Natural", "hex": "#D4C5A9" },
+    "grey": { "label": "Grey", "hex": "#8A8A8A" },
+    "white": { "label": "White", "hex": "#F8F8F8" },
+    "sage": { "label": "Sage", "hex": "#7B9B8A" },
+    "teal": { "label": "Teal", "hex": "#2A7A7A" },
+    "dusty-rose": { "label": "Dusty Rose", "hex": "#C4908A" },
+    "black": { "label": "Black", "hex": "#1A1A1A" },
+    "tan": { "label": "Tan", "hex": "#C4956A" },
+    "dark-brown": { "label": "Dark Brown", "hex": "#3D2B1F" }
+  },
+
+  "addons": {
+    "diamond-buttoning": {
+      "label": "Diamond Buttoning",
+      "price": 80,
+      "description": "Hand-stitched diamond pattern on headboard"
+    },
+    "chrome-feet": {
+      "label": "Chrome Feet",
+      "price": 40,
+      "description": "Polished chrome leg finish"
+    },
+    "gold-feet": {
+      "label": "Gold Feet",
+      "price": 60,
+      "description": "Brushed gold leg finish"
+    },
+    "wooden-feet": {
+      "label": "Wooden Feet",
+      "price": 30,
+      "description": "Natural oak leg finish"
+    },
+    "usb-ports": {
+      "label": "USB Ports",
+      "price": 50,
+      "description": "Dual USB charging ports in headboard"
+    },
+    "matching-headboard": {
+      "label": "Matching Headboard",
+      "price": 120,
+      "description": "Headboard upholstered in matching fabric"
+    }
+  },
+
+  "storageOptions": {
+    "none": { "label": "No Storage", "price": 0 },
+    "2-drawer": { "label": "2 Drawers", "price": 80 },
+    "4-drawer": { "label": "4 Drawers", "price": 140 },
+    "ottoman-lift": { "label": "Ottoman Lift", "price": 180 }
+  }
+}

@@ -1,0 +1,252 @@
+/* ============================================
+   BedCard — Universal Reusable Card
+   Hover drawer effect — image front, details slide up
+   ============================================ */
+
+.card {
+  position: relative;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  cursor: pointer;
+  background: #1a1710;
+
+  /* Size variants via CSS custom properties */
+  --card-name-size:  1rem;
+  --card-price-size: 1.1rem;
+}
+
+/* Size variants */
+.sm { --card-name-size: 0.85rem; --card-price-size: 0.95rem; }
+.md { --card-name-size: 1.3rem;    --card-price-size: 1.5rem;  }
+.lg { --card-name-size: 1.5rem; --card-price-size: 2rem;  }
+
+/* Ambient glow */
+.glow {
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  width: 150px;
+  height: 150px;
+  background: radial-gradient(circle, rgba(201, 169, 110, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 5;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.card:hover .glow { opacity: 1; }
+
+/* Badge */
+.badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: var(--color-gold);
+  color: var(--color-bg-primary);
+  font-family: var(--font-body);
+  font-size: 0.52rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 3px 9px;
+  border-radius: var(--radius-sm);
+  z-index: 10;
+}
+
+/* Image fills full card */
+.imageWrap {
+  width: 100%;
+  aspect-ratio: 3/4;
+  position: relative;
+  overflow: hidden;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+  display: block;
+}
+
+.card:hover .image { transform: scale(1.06); }
+
+.placeholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(160deg, #1e1a12 0%, #2a2218 50%, #1a1610 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.6s ease;
+}
+
+.card:hover .placeholder { transform: scale(1.04); }
+
+.placeholderIcon {
+  color: var(--color-gold-muted);
+  opacity: 0.25;
+  transition: opacity 0.3s ease;
+}
+
+.card:hover .placeholderIcon { opacity: 0.5; }
+
+/* Static bar — always visible at bottom */
+.staticBar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 12px 14px;
+  background: linear-gradient(to top, rgba(15,14,12,0.92) 0%, transparent 100%);
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  z-index: 3;
+  transition: opacity 0.3s ease;
+}
+
+.card:hover .staticBar { opacity: 0; }
+
+.staticName {
+  font-family: var(--font-display);
+  font-size: var(--card-name-size);
+  font-weight: 400;
+  color: var(--color-cream);
+  line-height: 1.2;
+}
+
+.staticPrice {
+  font-family: var(--font-display);
+  font-size: var(--card-price-size);
+  font-weight: 400;
+  color: var(--color-gold);
+  flex-shrink: 0;
+}
+
+.staticRating {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  margin-top: 2px;
+}
+
+.staticStars {
+  font-size: 0.65rem;
+  color: var(--color-gold);
+  letter-spacing: 1px;
+}
+
+.staticRatingCount {
+  font-size: 0.6rem;
+  color: var(--color-cream-faint);
+}
+
+/* Drawer — slides up on hover */
+.drawer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 4;
+  transform: translateY(100%);
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card:hover .drawer { transform: translateY(0); }
+
+.drawerInner {
+  background: rgba(15, 14, 12, 0.96);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-top: 1px solid rgba(201, 169, 110, 0.2);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.drawerTop {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.drawerName {
+  font-family: var(--font-display);
+  font-size: var(--card-name-size);
+  font-weight: 400;
+  color: var(--color-cream);
+  line-height: 1.2;
+}
+
+.drawerTagline {
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: var(--color-cream-muted);
+  line-height: 1.5;
+  margin-top: 3px;
+}
+
+.drawerPrice {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 1px;
+  flex-shrink: 0;
+}
+
+.drawerPriceFrom {
+  font-size: 0.8rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-cream-faint);
+}
+
+.drawerPriceAmount {
+  font-family: var(--font-display);
+  font-size: var(--card-price-size);
+  line-height: 10px;
+  font-weight: 400;
+  color: var(--color-gold);
+}
+
+/* Colour dots */
+.colours {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.colourDot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--color-gold-muted);
+  border: 1px solid var(--color-border-strong);
+  transition: transform 0.2s ease;
+  flex-shrink: 0;
+}
+
+.colourDot:hover { transform: scale(1.4); }
+
+.colourMore {
+  font-size: 0.62rem;
+  color: var(--color-cream-faint);
+}
+
+/* Action buttons */
+.actions {
+  display: flex;
+  gap: 6px;
+}
+
+.btnFull {
+  flex: 1;
+  justify-content: center;
+  padding: 8px 10px !important;
+  font-size: 0.6rem !important;
+}

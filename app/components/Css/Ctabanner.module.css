@@ -1,0 +1,52 @@
+.cta {
+  padding: var(--space-24) var(--space-6);
+  background: linear-gradient(135deg, #1a130a 0%, #0f0e0c 50%, #14100a 100%);
+  border-top: 1px solid var(--color-border);
+  text-align: center;
+}
+
+.inner {
+  max-width: 680px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-5);
+}
+
+.title {
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  color: var(--color-cream);
+  line-height: 1.1;
+}
+
+.title em {
+  font-style: italic;
+  color: var(--color-gold);
+}
+
+.sub {
+  font-size: 1rem;
+  font-weight: 300;
+  color: var(--color-cream-muted);
+  line-height: 1.8;
+  max-width: 460px;
+}
+
+.buttons {
+  display: flex;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: var(--space-4);
+}
+
+@media (max-width: 480px) {
+  .buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+  .buttons a {
+    justify-content: center;
+  }
+}

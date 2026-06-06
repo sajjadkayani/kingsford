@@ -1,0 +1,176 @@
+.page {
+  min-height: 100vh;
+  background: var(--color-bg-primary);
+}
+
+/* ── Hero ── */
+.hero {
+  padding: 140px 0 5rem;
+  text-align: center;
+  border-bottom: 1px solid var(--color-border);
+  position: relative;
+  overflow: hidden;
+}
+
+.heroLabel {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  margin-bottom: 0.75rem;
+}
+
+.title {
+  font-size: clamp(2.8rem, 5vw, 4.5rem);
+  color: var(--color-cream);
+  margin-bottom: 1.25rem;
+  font-weight: 300;
+}
+
+.title em { font-style: italic; color: var(--color-gold); }
+
+.intro {
+  font-size: 1rem;
+  font-weight: 300;
+  color: var(--color-cream-muted);
+  line-height: 1.9;
+  max-width: 500px;
+  margin: 0 auto 1.5rem;
+}
+
+.heroStats {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  font-size: 0.78rem;
+  color: #666;
+}
+
+.heroStatDivider {
+  width: 1px;
+  height: 12px;
+  background: #2a2820;
+}
+
+.heroStatValue { color: var(--color-gold); font-weight: 500; }
+
+/* ── Content ── */
+.content { padding: 4rem 0; }
+
+.categories {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+}
+
+/* ── Category row ── */
+.categoryRow {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.rowBgNumber {
+  position: absolute;
+  top: -0.3em;
+  right: -0.05em;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(8rem, 16vw, 14rem);
+  font-weight: 300;
+  color: var(--color-gold);
+  opacity: 0.03;
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+}
+
+.rowHeader {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--color-border);
+  position: relative;
+  z-index: 1;
+}
+
+.rowHeaderLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.rowIndex {
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  opacity: 0.7;
+}
+
+.categoryName {
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  color: var(--color-cream);
+  font-weight: 300;
+  margin: 0;
+  line-height: 1.1;
+}
+
+.categoryDesc {
+  font-size: 0.82rem;
+  font-weight: 300;
+  color: var(--color-cream-muted);
+  max-width: 420px;
+  margin: 0;
+}
+
+.viewAll {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  transition: gap 0.2s ease;
+  flex-shrink: 0;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.viewAll:hover { gap: 0.65rem; }
+
+/* ── Product row ── */
+.productRow {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  padding-bottom: 0.75rem;
+  position: relative;
+  z-index: 1;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-gold-muted) transparent;
+}
+
+.productRow::-webkit-scrollbar { height: 3px; }
+.productRow::-webkit-scrollbar-track { background: transparent; }
+.productRow::-webkit-scrollbar-thumb { background: var(--color-gold-muted); border-radius: 999px; }
+
+.cardWrap {
+  flex: 0 0 calc(25% - 0.75rem);
+  min-width: 200px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .rowHeader { flex-direction: column; align-items: flex-start; }
+  .cardWrap { flex: 0 0 180px; }
+}

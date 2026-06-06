@@ -1,0 +1,362 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap");
+
+/* ============================================
+   KINGSFORD SLEEP — DESIGN SYSTEM
+   Change anything here, updates everywhere.
+   ============================================ */
+
+:root {
+  /* BRAND COLOURS */
+  --color-bg-primary: #0f0e0c;
+  --color-bg-secondary: #1a1916;
+  --color-bg-tertiary: #242220;
+  --color-bg-light: #f7f3ee;
+  --color-bg-light-alt: #efebe4;
+
+  --color-gold: #c9a96e;
+  --color-gold-light: #dfc08a;
+  --color-gold-muted: #8a6f42;
+
+  --color-cream: #f5f0e8;
+  --color-cream-muted: #b8afa3;
+  --color-cream-faint: #6b6259;
+
+  --color-dark-text: #1c1a17;
+  --color-dark-muted: #4a4540;
+
+  --color-border: rgba(201, 169, 110, 0.15);
+  --color-border-strong: rgba(201, 169, 110, 0.35);
+
+  /* FONTS */
+  --font-display: "Cormorant Garamond", Georgia, serif;
+  --font-body: "Jost", system-ui, sans-serif;
+
+  /* SPACING */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+
+  /* LAYOUT */
+  --max-width: 1280px;
+  --max-width-narrow: 800px;
+
+  /* BORDERS */
+  --radius-sm: 3px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+  --radius-full: 9999px;
+
+  /* TRANSITIONS */
+  --transition-fast: 150ms ease;
+  --transition-base: 250ms ease;
+  --transition-slow: 400ms ease;
+
+  /* SHADOWS */
+  --shadow-gold-sm: 0 0 20px rgba(201, 169, 110, 0.08);
+  --shadow-gold-md: 0 0 40px rgba(201, 169, 110, 0.15);
+  --shadow-dark: 0 24px 80px rgba(0, 0, 0, 0.4);
+
+  /* Z-INDEX */
+  --z-base: 1;
+  --z-raised: 10;
+  --z-nav: 200;
+  --z-modal: 300;
+
+  /* ============================================
+     TYPOGRAPHY SCALE — change once, updates everywhere
+     ============================================ */
+
+  /* Display sizes */
+  --text-display-xl: clamp(4rem, 11vw, 9rem);
+  --text-display-lg: clamp(2.5rem, 5vw, 4.5rem);
+  --text-display-md: clamp(2rem, 4vw, 3.2rem);
+  --text-display-sm: clamp(1.5rem, 3vw, 2.2rem);
+
+  /* Body sizes */
+  --text-body-lg: 1.1rem;
+  --text-body-md: 1rem;
+  --text-body-sm: 0.9rem;
+  --text-body-xs: 0.82rem;
+
+  /* UI sizes */
+  --text-label: 0.7rem;
+  --text-btn: 0.75rem;
+  --text-nav: 0.8rem;
+  --text-card-name: 1rem;
+  --text-card-price: 1.15rem;
+
+  /* Font weights */
+  --weight-light: 300;
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-bold: 600;
+
+  /* Line heights */
+  --leading-tight: 1.1;
+  --leading-snug: 1.3;
+  --leading-normal: 1.7;
+  --leading-relaxed: 1.85;
+}
+
+/* ============================================
+   RESET & BASE
+   ============================================ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.7;
+  color: var(--color-cream);
+  background-color: var(--color-bg-primary);
+  overflow-x: hidden;
+}
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: var(--font-body);
+}
+
+/* ============================================
+   REUSABLE LAYOUT
+   ============================================ */
+
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-6);
+}
+.container-1 {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+.container--narrow {
+  max-width: var(--max-width-narrow);
+  margin: 0 auto;
+  padding: 0 var(--space-6);
+}
+
+.section {
+  padding: var(--space-24) 0;
+}
+
+.section--light {
+  background-color: var(--color-bg-light);
+  color: var(--color-dark-text);
+}
+
+.section--dark {
+  background-color: var(--color-bg-secondary);
+}
+
+/* ============================================
+   REUSABLE BUTTONS
+   ============================================ */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: var(--space-4) var(--space-8);
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-base);
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.btn--primary {
+  background-color: var(--color-gold);
+  color: var(--color-bg-primary);
+  border: 1px solid var(--color-gold);
+}
+
+.btn--primary:hover {
+  background-color: var(--color-gold-light);
+  border-color: var(--color-gold-light);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-gold-md);
+}
+
+.btn--outline {
+  background-color: transparent;
+  color: var(--color-cream);
+  border: 1px solid var(--color-border-strong);
+}
+
+.btn--outline:hover {
+  border-color: var(--color-gold);
+  color: var(--color-gold);
+  transform: translateY(-1px);
+}
+
+.btn--outline-dark {
+  background-color: transparent;
+  color: var(--color-dark-text);
+  border: 1px solid rgba(28, 26, 23, 0.25);
+}
+
+.btn--outline-dark:hover {
+  border-color: var(--color-gold-muted);
+  color: var(--color-gold-muted);
+}
+
+.btn--whatsapp {
+  background-color: #25d366;
+  color: #fff;
+  border: 1px solid #25d366;
+}
+
+.btn--whatsapp:hover {
+  background-color: #20ba59;
+  transform: translateY(-1px);
+}
+
+/* ============================================
+   REUSABLE TYPOGRAPHY
+   ============================================ */
+
+.section-label {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+}
+
+.gold-line {
+  width: 40px;
+  height: 1px;
+  background: var(--color-gold);
+  margin: var(--space-5) auto;
+}
+
+.gold-line--left {
+  margin-left: 0;
+}
+
+.display-heading {
+  font-family: var(--font-display);
+  font-weight: 300;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+}
+
+/* ============================================
+   SCROLLBAR
+   ============================================ */
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-gold-muted);
+  border-radius: var(--radius-full);
+}
+
+/* ============================================
+   SELECTION
+   ============================================ */
+
+::selection {
+  background: var(--color-gold);
+  color: var(--color-bg-primary);
+}
+
+/* ============================================
+   FOCUS
+   ============================================ */
+
+:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 3px;
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scrollPulse {
+  0%,
+  100% {
+    opacity: 0.3;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}

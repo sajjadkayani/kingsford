@@ -1,0 +1,206 @@
+.reviews {
+  background: var(--color-bg-secondary);
+  border-top: 1px solid var(--color-border);
+  overflow: hidden;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: var(--space-12);
+  padding: 0 var(--space-6);
+}
+
+.title {
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  color: var(--color-cream);
+  margin-bottom: var(--space-5);
+}
+
+.title em {
+  font-style: italic;
+  color: var(--color-gold);
+}
+
+.aggregate {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  margin-top: var(--space-3);
+}
+
+.aggregateText {
+  font-size: 0.85rem;
+  font-weight: 300;
+  color: var(--color-cream-muted);
+}
+
+.stars {
+  display: flex;
+  gap: 2px;
+}
+
+.starFilled {
+  color: var(--color-gold);
+  font-size: 0.85rem;
+}
+
+.starEmpty {
+  color: var(--color-cream-faint);
+  font-size: 0.85rem;
+}
+
+/* Carousel */
+.carousel {
+  width: 100%;
+  overflow: hidden;
+  cursor: grab;
+}
+
+.carousel:active {
+  cursor: grabbing;
+}
+
+.track {
+  display: flex;
+  gap: var(--space-6);
+  width: max-content;
+  animation: slide 50s linear infinite;
+  padding: var(--space-4) var(--space-6) var(--space-8);
+}
+
+.trackPaused {
+  animation-play-state: paused;
+}
+
+/* Card */
+.card {
+  width: 360px;
+  flex-shrink: 0;
+  background: var(--color-bg-primary);
+  border: 1px solid var(--color-border);
+  border-left: 3px solid var(--color-gold-muted);
+  border-radius: var(--radius-lg);
+  padding: var(--space-8);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  position: relative;
+  transition: border-color var(--transition-base), transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.card:hover {
+  border-left-color: var(--color-gold);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+}
+
+/* Big decorative quote mark */
+.card::before {
+  content: '\201C';
+  position: absolute;
+  top: var(--space-4);
+  right: var(--space-6);
+  font-family: var(--font-display);
+  font-size: 5rem;
+  line-height: 1;
+  color: var(--color-gold);
+  opacity: 0.12;
+  pointer-events: none;
+}
+
+.cardTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.verified {
+  font-size: 0.65rem;
+  font-weight: 500;
+  color: var(--color-gold);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.reviewText {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 300;
+  font-style: italic;
+  color: var(--color-cream);
+  line-height: 1.75;
+  flex: 1;
+}
+
+.cardBottom {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  padding-top: var(--space-5);
+  border-top: 1px solid var(--color-border);
+}
+
+.avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-full);
+  background: linear-gradient(135deg, var(--color-gold-muted), var(--color-gold));
+  color: var(--color-bg-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 500;
+  flex-shrink: 0;
+}
+
+.customerInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.customerName {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--color-cream);
+  letter-spacing: 0.02em;
+}
+
+.customerMeta {
+  font-size: 0.72rem;
+  font-weight: 300;
+  color: var(--color-cream-faint);
+  letter-spacing: 0.04em;
+}
+
+.bedTag {
+  display: inline-block;
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  background: rgba(201, 169, 110, 0.08);
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(201, 169, 110, 0.2);
+  margin-top: 2px;
+  display: block;
+  width: fit-content;
+}
+
+.cta {
+  text-align: center;
+  margin-top: var(--space-10);
+}
+
+@keyframes slide {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}

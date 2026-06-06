@@ -1,0 +1,89 @@
+.featured {
+  background: var(--color-bg-primary);
+  border-top: 1px solid var(--color-border);
+  overflow: hidden;
+}
+
+.header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--space-6);
+  margin-bottom: var(--space-10);
+}
+
+.headerLeft { display: flex; flex-direction: column; gap: var(--space-2); }
+
+.title {
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  color: var(--color-cream);
+  line-height: 1.1;
+}
+
+.title em { font-style: italic; color: var(--color-gold); }
+
+.headerRight {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex-shrink: 0;
+}
+
+.arrow {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--color-border-strong);
+  background: rgba(255,255,255,0.02);
+  color: var(--color-cream-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+.arrow:hover {
+  border-color: var(--color-gold);
+  color: var(--color-gold);
+  background: rgba(201,169,110,0.06);
+}
+
+.arrowDisabled { opacity: 0.2; cursor: not-allowed; }
+.arrowDisabled:hover { border-color: var(--color-border-strong); color: var(--color-cream-muted); background: transparent; }
+
+.carouselWrap { 
+  overflow: hidden; 
+padding: 10px  0 10px;
+}
+
+.track {
+  display: flex;
+  gap: 4px;
+  transition: transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+
+.cardWrap {
+  flex: 0 0 calc(25% - 3px);
+  min-width: 0;
+}
+
+.progress {
+  margin-top: var(--space-6);
+  height: 1px;
+  background: var(--color-border);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.progressBar {
+  height: 100%;
+  background: linear-gradient(to right, var(--color-gold-muted), var(--color-gold));
+  border-radius: var(--radius-full);
+  transition: width 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@media (max-width: 1100px) { .cardWrap { flex: 0 0 calc(33.333% - 3px); } }
+@media (max-width: 768px) { .cardWrap { flex: 0 0 calc(50% - 2px); } .header { flex-direction: column; align-items: flex-start; } }
+@media (max-width: 480px) { .cardWrap { flex: 0 0 78%; } }

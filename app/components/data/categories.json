@@ -1,0 +1,488 @@
+[
+  {
+    "id": 1,
+    "category": "Ottoman Beds",
+    "slug": "ottoman",
+    "description": "Lift-up storage. Handcrafted frames. Perfect for modern bedrooms.",
+    "products": [
+      {
+        "id": "ottoman-classic",
+        "name": "Classic Ottoman",
+        "slug": "classic-ottoman",
+        "tagline": "Clean lines, generous storage.",
+        "description": "Our best-selling Ottoman bed combines generous under-bed storage with a beautifully upholstered frame. Perfect for modern bedrooms where space matters. Every joint handcrafted in our UK factory.",
+        "images": [
+          "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=800&q=80",
+          "https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=800&q=80",
+          "https://images.unsplash.com/photo-1540518614846-7eded433c457?w=800&q=80",
+          "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=800&q=70",
+          "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=800&q=80",
+          "https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=800&q=80",
+          "https://images.unsplash.com/photo-1540518614846-7eded433c457?w=800&q=80",
+          "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=800&q=80",
+          "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=800&q=80",
+          "https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=800&q=80",
+          "https://images.unsplash.com/photo-1540518614846-7eded433c457?w=800&q=80",
+          "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=800&q=70",
+          "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=800&q=80",
+          "https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=800&q=80",
+          "https://images.unsplash.com/photo-1540518614846-7eded433c457?w=800&q=80",
+          "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=800&q=80"
+        ],
+        "basePrice": 599,
+        "badge": "Best Seller",
+        "colours": ["Slate Grey", "Cream", "Navy", "Blush Pink", "Charcoal", "Forest Green"],
+        "fabrics": ["Velvet", "Linen", "Chenille", "Faux Leather"],
+        "sizes": ["Single", "Small Double", "Double", "King", "Super King"],
+        "addons": ["Diamond Buttoning", "Chrome Feet", "Matching Headboard", "USB Ports"]
+      },
+      {
+        "id": "ottoman-winged",
+        "name": "Winged Ottoman",
+        "slug": "winged-ottoman",
+        "tagline": "Winged headboard, lift-up base.",
+        "description": "The Winged Ottoman combines the practicality of lift-up storage with a dramatic winged headboard. A statement piece that works hard.",
+        "images": [
+          "https://images.unsplash.com/photo-1567016432779-094069958ea5?w=800&q=80",
+          "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=800&q=80",
+          "https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=800&q=80"
+        ],
+        "basePrice": 699,
+        "badge": null,
+        "colours": ["Slate Grey", "Navy", "Charcoal", "Midnight Blue", "Cream"],
+        "fabrics": ["Velvet", "Chenille", "Faux Leather"],
+        "sizes": ["Double", "King", "Super King"],
+        "addons": ["Diamond Buttoning", "Chrome Feet", "Gold Feet", "USB Ports"]
+      },
+     
+      {
+        "id": "ottoman-low",
+        "name": "Low Ottoman",
+        "slug": "low-ottoman",
+        "tagline": "Sleek, low profile, modern feel.",
+        "description": "The Low Ottoman brings a contemporary edge to the classic storage bed. Lower headboard, cleaner lines, same generous storage.",
+        "images": [
+          "https://images.unsplash.com/photo-1588046130717-0eb0c9a3ba15?w=800&q=80",
+          "https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=800&q=80",
+          "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=800&q=80"
+        ],
+        "basePrice": 649,
+        "badge": "New",
+        "colours": ["Charcoal", "Midnight Blue", "Forest Green", "Slate Grey", "Cream"],
+        "fabrics": ["Velvet", "Linen", "Faux Leather"],
+        "sizes": ["Double", "King", "Super King"],
+        "addons": ["Chrome Feet", "Gold Feet", "USB Ports"]
+      }
+      
+    ]
+  },
+  {
+    "id": 2,
+    "category": "Wingback Beds",
+    "slug": "wingback",
+    "description": "Dramatic headboards. Pure luxury. A statement in any bedroom.",
+    "products": [
+      {
+        "id": "wingback-classic",
+        "name": "Classic Wingback",
+        "slug": "classic-wingback",
+        "tagline": "The original. Timeless wingback design.",
+        "description": "The Classic Wingback is our most popular statement bed. The iconic winged headboard creates an instant focal point in any master bedroom.",
+        "images": [
+          "https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=800&q=80",
+          "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=800&q=80",
+          "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=800&q=80",
+          "https://images.unsplash.com/photo-1540518614846-7eded433c457?w=800&q=80"
+        ],
+        "basePrice": 799,
+        "badge": "Popular",
+        "colours": ["Midnight Blue", "Emerald Green", "Burgundy", "Cream", "Charcoal"],
+        "fabrics": ["Velvet", "Chenille", "Faux Leather"],
+        "sizes": ["Double", "King", "Super King"],
+        "addons": ["Diamond Buttoning", "Gold Feet", "Chrome Feet", "USB Ports"]
+      },
+      {
+        "id": "wingback-grand",
+        "name": "Grand Wingback",
+        "slug": "grand-wingback",
+        "tagline": "Floor to ceiling drama.",
+        "description": "The Grand Wingback takes the classic design to its natural extreme. Taller wings, deeper padding, more presence.",
+        "images": [
+          "https://images.unsplash.com/photo-1567016432779-094069958ea5?w=800&q=80",
+          "https://images.unsplash.com/photo-1588046130717-0eb0c9a3ba15?w=800&q=80",
+          "https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=800&q=80"
+        ],
+        "basePrice": 999,
+        "badge": "Premium",
+        "colours": ["Midnight Blue", "Burgundy", "Charcoal", "Cream"],
+        "fabrics": ["Velvet", "Chenille"],
+        "sizes": ["King", "Super King"],
+        "addons": ["Diamond Buttoning", "Gold Feet", "USB Ports"]
+      },
+      {
+        "id": "wingback-low",
+        "name": "Low Wingback",
+        "slug": "low-wingback",
+        "tagline": "Subtle wings, understated luxury.",
+        "description": "The Low Wingback offers the elegance of the wingback silhouette in a more understated, contemporary proportion.",
+        "images": [
+          "https://images.unsplash.com/photo-1540518614846-7eded433c457?w=800&q=80",
+          "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=800&q=80",
+          "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=800&q=80"
+        ],
+        "basePrice": 699,
+        "badge": null,
+        "colours": ["Slate Grey", "Navy", "Cream", "Charcoal", "Blush Pink"],
+        "fabrics": ["Velvet", "Linen", "Chenille"],
+        "sizes": ["Double", "King", "Super King"],
+        "addons": ["Chrome Feet", "Wooden Feet", "USB Ports"]
+      },
+      {
+        "id": "wingback-footboard",
+        "name": "Wingback with Footboard",
+        "slug": "wingback-footboard",
+        "tagline": "Full frame, complete look.",
+        "description": "The Wingback with Footboard gives you the full framed look. Dramatic headboard, matching footboard, complete bedroom centrepiece.",
+        "images": [
+          "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=800&q=80",
+          "https://images.unsplash.com/photo-1567016432779-094069958ea5?w=800&q=80",
+          "https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=800&q=80"
+        ],
+        "basePrice": 899,
+        "badge": null,
+        "colours": ["Midnight Blue", "Cream", "Charcoal", "Burgundy"],
+        "fabrics": ["Velvet", "Chenille"],
+        "sizes": ["Double", "King", "Super King"],
+        "addons": ["Diamond Buttoning", "Gold Feet", "Chrome Feet"]
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "category": "Panel Beds",
+    "slug": "panel",
+    "description": "Clean lines. Solid build. Timeless design for every bedroom.",
+    "products": [
+      {
+        "id": "panel-classic",
+        "name": "Classic Panel",
+        "slug": "classic-panel",
+        "tagline": "Simple, elegant, enduring.",
+        "description": "The Classic Panel bed is built to last generations. No unnecessary detail, just beautiful proportions and solid construction.",
+        "images": [
+          "https://images.unsplash.com/photo-1588046130717-0eb0c9a3ba15?w=800&q=80",
+          "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=800&q=80",
+          "https://images.unsplash.com/photo-1540518614846-7eded433c457?w=800&q=80"
+        ],
+        "basePrice": 449,
+        "badge": "Classic",
+        "colours": ["Slate Grey", "Cream", "Navy", "Charcoal", "Blush Pink"],
+        "fabrics": ["Velvet", "Linen", "Chenille"],
+        "sizes": ["Single", "Small Double", "Double", "King", "Super King"],
+        "addons": ["Diamond Buttoning", "Wooden Feet", "Matching Headboard"]
+      },
+      {
+        "id": "panel-tall",
+        "name": "Tall Panel",
+        "slug": "tall-panel",
+        "tagline": "Taller headboard, more presence.",
+        "description": "The Tall Panel offers more visual height, making it ideal for rooms with high ceilings where a standard headboard feels lost.",
+        "images": [
+          "https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=800&q=80",
+          "https://images.unsplash.com/photo-1588046130717-0eb0c9a3ba15?w=800&q=80",
+          "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=800&q=80"
+        ],
+        "basePrice": 499,
+        "badge": null,
+        "colours": ["Slate Grey", "Navy", "Cream", "Charcoal"],
+        "fabrics": ["Velvet", "Linen", "Chenille"],
+        "sizes": ["Double", "King", "Super King"],
+        "addons": ["Diamond Buttoning", "Chrome Feet", "Wooden Feet"]
+      },
+      {
+        "id": "panel-footboard",
+        "name": "Panel with Footboard",
+        "slug": "panel-footboard",
+        "tagline": "Complete frame, traditional look.",
+        "description": "The Panel with Footboard gives you the complete traditional bed frame. Headboard and footboard in perfect proportion.",
+        "images": [
+          "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=800&q=80",
+          "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=800&q=80",
+          "https://images.unsplash.com/photo-1540518614846-7eded433c457?w=800&q=80"
+        ],
+        "basePrice": 549,
+        "badge": null,
+        "colours": ["Cream", "Slate Grey", "Navy", "Charcoal"],
+        "fabrics": ["Velvet", "Linen"],
+        "sizes": ["Double", "King", "Super King"],
+        "addons": ["Diamond Buttoning", "Wooden Feet", "Chrome Feet"]
+      },
+      {
+        "id": "panel-low",
+        "name": "Low Panel",
+        "slug": "low-panel",
+        "tagline": "Minimal height, maximum style.",
+        "description": "The Low Panel is for rooms where you want the bed to feel grounded and contemporary. Lower headboard, clean lines.",
+        "images": [
+          "https://images.unsplash.com/photo-1540518614846-7eded433c457?w=800&q=80",
+          "https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=800&q=80",
+          "https://images.unsplash.com/photo-1588046130717-0eb0c9a3ba15?w=800&q=80"
+        ],
+        "basePrice": 429,
+        "badge": null,
+        "colours": ["Charcoal", "Slate Grey", "Navy", "Cream"],
+        "fabrics": ["Velvet", "Linen", "Faux Leather"],
+        "sizes": ["Single", "Double", "King", "Super King"],
+        "addons": ["Chrome Feet", "Wooden Feet", "USB Ports"]
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "category": "Sleigh Beds",
+    "slug": "sleigh",
+    "description": "Curved elegance. A classic British design built to last.",
+    "products": [
+      {
+        "id": "sleigh-classic",
+        "name": "Classic Sleigh",
+        "slug": "classic-sleigh",
+        "tagline": "Curved headboard and footboard.",
+        "description": "The Classic Sleigh bed is a timeless British design. Curved headboard and footboard, upholstered in your choice of fabric.",
+        "images": [
+          "https://images.unsplash.com/photo-1567016432779-094069958ea5?w=800&q=80",
+          "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=800&q=80",
+          "https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=800&q=80"
+        ],
+        "basePrice": 649,
+        "badge": "New",
+        "colours": ["Cream", "Slate Grey", "Blush Pink", "Navy", "Charcoal"],
+        "fabrics": ["Velvet", "Linen", "Chenille"],
+        "sizes": ["Double", "King", "Super King"],
+        "addons": ["Diamond Buttoning", "Chrome Feet", "Matching Headboard"]
+      },
+      {
+        "id": "sleigh-scroll",
+        "name": "Scroll Sleigh",
+        "slug": "scroll-sleigh",
+        "tagline": "Ornate scroll detail, rich character.",
+        "description": "The Scroll Sleigh adds ornate scroll detailing to the classic sleigh silhouette. Rich character, traditional British craftsmanship.",
+        "images": [
+          "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=800&q=80",
+          "https://images.unsplash.com/photo-1567016432779-094069958ea5?w=800&q=80",
+          "https://images.unsplash.com/photo-1540518614846-7eded433c457?w=800&q=80"
+        ],
+        "basePrice": 749,
+        "badge": null,
+        "colours": ["Cream", "Blush Pink", "Slate Grey", "Burgundy"],
+        "fabrics": ["Velvet", "Linen"],
+        "sizes": ["Double", "King", "Super King"],
+        "addons": ["Chrome Feet", "Wooden Feet", "Diamond Buttoning"]
+      },
+      {
+        "id": "sleigh-low",
+        "name": "Low Sleigh",
+        "slug": "low-sleigh",
+        "tagline": "Modern take on a classic shape.",
+        "description": "The Low Sleigh takes the signature curved lines of the sleigh bed and brings them down to a contemporary proportion.",
+        "images": [
+          "https://images.unsplash.com/photo-1588046130717-0eb0c9a3ba15?w=800&q=80",
+          "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=800&q=80",
+          "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=800&q=80"
+        ],
+        "basePrice": 599,
+        "badge": null,
+        "colours": ["Slate Grey", "Navy", "Cream", "Charcoal"],
+        "fabrics": ["Velvet", "Linen", "Chenille"],
+        "sizes": ["Double", "King", "Super King"],
+        "addons": ["Chrome Feet", "USB Ports"]
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "category": "Divan Beds",
+    "slug": "divan",
+    "description": "Maximum storage. Practical luxury for the modern home.",
+    "products": [
+      {
+        "id": "divan-4drawer",
+        "name": "4 Drawer Divan",
+        "slug": "4-drawer-divan",
+        "tagline": "Four large drawers, full storage.",
+        "description": "Our 4 Drawer Divan offers the maximum in bedroom storage. Four large drawers, solid base, upholstered in your choice of fabric.",
+        "images": [
+          "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=800&q=80",
+          "https://images.unsplash.com/photo-1540518614846-7eded433c457?w=800&q=80",
+          "https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=800&q=80"
+        ],
+        "basePrice": 399,
+        "badge": null,
+        "colours": ["Charcoal", "Cream", "Slate Grey", "Navy"],
+        "fabrics": ["Velvet", "Linen", "Faux Leather"],
+        "sizes": ["Single", "Small Double", "Double", "King", "Super King"],
+        "addons": ["USB Ports", "Chrome Feet", "Matching Headboard"]
+      },
+      {
+        "id": "divan-2drawer",
+        "name": "2 Drawer Divan",
+        "slug": "2-drawer-divan",
+        "tagline": "Two side drawers, clean lines.",
+        "description": "The 2 Drawer Divan keeps things clean and simple. Two generous side drawers, solid construction, clean upholstered finish.",
+        "images": [
+          "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=800&q=80",
+          "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=800&q=80",
+          "https://images.unsplash.com/photo-1588046130717-0eb0c9a3ba15?w=800&q=80"
+        ],
+        "basePrice": 349,
+        "badge": null,
+        "colours": ["Slate Grey", "Cream", "Charcoal", "Navy"],
+        "fabrics": ["Velvet", "Linen"],
+        "sizes": ["Single", "Double", "King", "Super King"],
+        "addons": ["USB Ports", "Chrome Feet"]
+      },
+      {
+        "id": "divan-ottoman",
+        "name": "Divan Ottoman",
+        "slug": "divan-ottoman",
+        "tagline": "Full lift-up base, maximum space.",
+        "description": "The Divan Ottoman combines the solid divan base with full lift-up storage. Maximum space, clean finish, no compromise.",
+        "images": [
+          "https://images.unsplash.com/photo-1567016432779-094069958ea5?w=800&q=80",
+          "https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=800&q=80",
+          "https://images.unsplash.com/photo-1540518614846-7eded433c457?w=800&q=80"
+        ],
+        "basePrice": 499,
+        "badge": "Popular",
+        "colours": ["Charcoal", "Slate Grey", "Navy", "Cream"],
+        "fabrics": ["Velvet", "Faux Leather", "Linen"],
+        "sizes": ["Double", "King", "Super King"],
+        "addons": ["USB Ports", "Chrome Feet", "Matching Headboard"]
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "category": "Chesterfield Beds",
+    "slug": "chesterfield",
+    "description": "Deep button tufting. Rich character. Iconic British style.",
+    "products": [
+      {
+        "id": "chesterfield-classic",
+        "name": "Classic Chesterfield",
+        "slug": "classic-chesterfield",
+        "tagline": "Deep buttons, rich character.",
+        "description": "The Classic Chesterfield brings the iconic deep button tufting of the Chesterfield sofa to the bedroom. Rich texture, timeless character.",
+        "images": [
+          "https://images.unsplash.com/photo-1540518614846-7eded433c457?w=800&q=80",
+          "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=800&q=80",
+          "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=800&q=80"
+        ],
+        "basePrice": 749,
+        "badge": null,
+        "colours": ["Burgundy", "Midnight Blue", "Charcoal", "Forest Green", "Cream"],
+        "fabrics": ["Velvet", "Faux Leather", "Chenille"],
+        "sizes": ["Double", "King", "Super King"],
+        "addons": ["Chrome Feet", "Gold Feet", "USB Ports"]
+      },
+      {
+        "id": "chesterfield-grand",
+        "name": "Grand Chesterfield",
+        "slug": "grand-chesterfield",
+        "tagline": "Floor to ceiling tufting.",
+        "description": "The Grand Chesterfield takes button tufting to the extreme. Full height headboard, deep buttoning throughout, maximum impact.",
+        "images": [
+          "https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=800&q=80",
+          "https://images.unsplash.com/photo-1567016432779-094069958ea5?w=800&q=80",
+          "https://images.unsplash.com/photo-1588046130717-0eb0c9a3ba15?w=800&q=80"
+        ],
+        "basePrice": 899,
+        "badge": "Premium",
+        "colours": ["Burgundy", "Midnight Blue", "Charcoal", "Forest Green"],
+        "fabrics": ["Velvet", "Faux Leather"],
+        "sizes": ["King", "Super King"],
+        "addons": ["Gold Feet", "USB Ports"]
+      },
+      {
+        "id": "chesterfield-low",
+        "name": "Low Chesterfield",
+        "slug": "low-chesterfield",
+        "tagline": "Subtle tufting, modern proportions.",
+        "description": "The Low Chesterfield brings the character of button tufting in a more contemporary, lower-profile proportion.",
+        "images": [
+          "https://images.unsplash.com/photo-1588046130717-0eb0c9a3ba15?w=800&q=80",
+          "https://images.unsplash.com/photo-1540518614846-7eded433c457?w=800&q=80",
+          "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=800&q=80"
+        ],
+        "basePrice": 649,
+        "badge": null,
+        "colours": ["Charcoal", "Midnight Blue", "Cream", "Burgundy"],
+        "fabrics": ["Velvet", "Faux Leather"],
+        "sizes": ["Double", "King", "Super King"],
+        "addons": ["Chrome Feet", "Gold Feet"]
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "category": "Low Profile Beds",
+    "slug": "low-profile",
+    "description": "Minimal design. Contemporary edge. Maximum impact.",
+    "products": [
+      {
+        "id": "low-classic",
+        "name": "Classic Low Profile",
+        "slug": "classic-low-profile",
+        "tagline": "Sleek, grounded, contemporary.",
+        "description": "The Classic Low Profile bed sits close to the ground for a modern, grounded aesthetic. Clean lines, minimal detail, maximum style.",
+        "images": [
+          "https://images.unsplash.com/photo-1567016432779-094069958ea5?w=800&q=80",
+          "https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=800&q=80",
+          "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=800&q=80"
+        ],
+        "basePrice": 499,
+        "badge": null,
+        "colours": ["Charcoal", "Slate Grey", "Cream", "Midnight Blue", "Forest Green"],
+        "fabrics": ["Velvet", "Linen", "Chenille", "Faux Leather"],
+        "sizes": ["Double", "King", "Super King"],
+        "addons": ["Gold Feet", "Chrome Feet", "USB Ports"]
+      },
+      {
+        "id": "low-platform",
+        "name": "Platform Bed",
+        "slug": "platform-bed",
+        "tagline": "Ultra low, floating aesthetic.",
+        "description": "The Platform Bed sits at its lowest point for a truly contemporary floating aesthetic. Minimal, purposeful, elegant.",
+        "images": [
+          "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=800&q=80",
+          "https://images.unsplash.com/photo-1588046130717-0eb0c9a3ba15?w=800&q=80",
+          "https://images.unsplash.com/photo-1567016432779-094069958ea5?w=800&q=80"
+        ],
+        "basePrice": 549,
+        "badge": "New",
+        "colours": ["Charcoal", "Midnight Blue", "Slate Grey", "Forest Green"],
+        "fabrics": ["Velvet", "Faux Leather"],
+        "sizes": ["Double", "King", "Super King"],
+        "addons": ["Gold Feet", "USB Ports"]
+      },
+      {
+        "id": "low-floating",
+        "name": "Floating Low Bed",
+        "slug": "floating-low-bed",
+        "tagline": "Wall-mounted look, freestanding build.",
+        "description": "The Floating Low Bed creates the illusion of a wall-mounted bed with its concealed leg design, while remaining fully freestanding.",
+        "images": [
+          "https://images.unsplash.com/photo-1540518614846-7eded433c457?w=800&q=80",
+          "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=800&q=80",
+          "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=800&q=80"
+        ],
+        "basePrice": 599,
+        "badge": null,
+        "colours": ["Charcoal", "Midnight Blue", "Slate Grey"],
+        "fabrics": ["Velvet", "Faux Leather"],
+        "sizes": ["Double", "King", "Super King"],
+        "addons": ["USB Ports"]
+      }
+    ]
+  }
+]

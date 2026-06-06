@@ -1,0 +1,242 @@
+/* app/components/configurator/BedVisual/BedVisual.module.css */
+
+.wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ── Bed container — handles size scaling ── */
+.bedContainer {
+  position: relative;
+  width: 90%;
+  height: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: scaleX(var(--scale));
+  transform-origin: center center;
+  transition: transform 400ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ── Actual bed image ── */
+.bedImage {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  animation: bedSwap 300ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes bedSwap {
+  from {
+    opacity: 0;
+    transform: scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ── Colour tint — multiply blend over the white image ── */
+.colourTint {
+  position: absolute;
+  inset: 0;
+  background-color: var(--colour);
+  mix-blend-mode: multiply;
+  pointer-events: none;
+  transition: background-color 300ms ease;
+  z-index: 2;
+}
+
+/* ── Fabric texture overlays ── */
+.fabricOverlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+  opacity: 0;
+}
+
+.fabric-velvet {
+  opacity: 1;
+  background-image: repeating-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.03) 0px,
+    rgba(255, 255, 255, 0.03) 1px,
+    transparent 1px,
+    transparent 4px
+  );
+}
+
+.fabric-linen {
+  opacity: 1;
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.04) 0px,
+      rgba(0, 0, 0, 0.04) 1px,
+      transparent 1px,
+      transparent 5px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.04) 0px,
+      rgba(0, 0, 0, 0.04) 1px,
+      transparent 1px,
+      transparent 5px
+    );
+}
+
+.fabric-chenille {
+  opacity: 1;
+  background-image: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.04) 1px,
+    transparent 1px
+  );
+  background-size: 6px 6px;
+}
+
+.fabric-faux-leather {
+  opacity: 1;
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.05) 0px,
+      rgba(0, 0, 0, 0.05) 1px,
+      transparent 1px,
+      transparent 10px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.05) 0px,
+      rgba(0, 0, 0, 0.05) 1px,
+      transparent 1px,
+      transparent 10px
+    );
+}
+
+/* ── Style label ── */
+.label {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(201, 169, 110, 0.5);
+  white-space: nowrap;
+  pointer-events: none;
+  animation: fadeUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+.placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.placeholderText {
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-cream-faint);
+}
+
+.hiddenImg {
+  display: none;
+}
+
+.bedCanvas {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  display: block;
+  animation: bedSwap 300ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.measureSvgW {
+  position: absolute;
+  bottom: 30px;
+  left: 8%;
+  width: 84%;
+  height: 10px;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.measureSvgH {
+  position: absolute;
+  right: 30px;
+  top: 6%;
+  width: 10px;
+  height: 88%;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.measureW {
+  position: absolute;
+  bottom: 4px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  color: rgba(201, 169, 110, 0.6);
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+.measureH {
+  position: absolute;
+  right: -10px;
+  top: 50%;
+  transform: translateY(-50%) rotate(90deg);
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  color: rgba(201, 169, 110, 0.6);
+  pointer-events: none;
+  white-space: nowrap;
+}
+.visual {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.baseImage {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
