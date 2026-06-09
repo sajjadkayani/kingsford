@@ -1,8 +1,11 @@
 import './globals.css'
+import { Suspense } from 'react'
 import Navbar from './components/layout/Navbar'
 import Footer from './components/layout/Footer'
 import ReduxProvider from './store/ReduxProvider'
 import CartDrawer from './components/cart/CartDrawer'
+import ChatWidget from './components/chat/ChatWidget'
+import Analytics from './components/Analytics'
 /* ============================================
    SITE METADATA — update these once
    they apply across the whole site
@@ -51,6 +54,14 @@ export const metadata = {
     title: 'Kingsford Sleep | Handcrafted Beds Made in the UK',
     description:
       'Luxury handcrafted beds made in our UK factory. Custom sizes, fabrics and finishes. Build your perfect bed and get an instant quote.',
+    images: [
+      {
+        url: '/beds/ottoman.png',
+        width: 1200,
+        height: 630,
+        alt: 'Kingsford Sleep — Handcrafted Luxury Beds Made in the UK',
+      },
+    ],
   },
 
   /* Twitter card */
@@ -59,6 +70,7 @@ export const metadata = {
     title: 'Kingsford Sleep | Handcrafted Beds Made in the UK',
     description:
       'Luxury handcrafted beds made in our UK factory. Custom sizes, fabrics and finishes.',
+    images: ['/beds/ottoman.png'],
   },
 
   /* Robots — tells Google to index everything */
@@ -90,7 +102,7 @@ export const metadata = {
 
 const organizationSchema = {
   '@context': 'https://schema.org',
-  '@type': 'Organization',
+  '@type': ['Organization', 'LocalBusiness'],
   name: 'Kingsford Sleep',
   url: 'https://www.kingsfordsleep.co.uk',
   logo: 'https://www.kingsfordsleep.co.uk/logo.png',
@@ -183,6 +195,8 @@ export default function RootLayout({ children }) {
             {children}
           </main>
           <Footer />
+          <ChatWidget />
+          <Suspense fallback={null}><Analytics /></Suspense>
         </ReduxProvider>
       </body>
     </html>

@@ -7,8 +7,6 @@ import { SingleImageUploader, MultiImageUploader } from '@/app/components/admin/
 
 const ALL_SIZES = ['Single', 'Small Double', 'Double', 'King', 'Super King']
 
-const FABRIC_SUGGESTIONS = ['Velvet', 'Linen', 'Chenille', 'Faux Leather', 'Boucle', 'Plush', 'Suede', 'Cotton', 'Wool']
-
 const ALL_ADDONS = [
   'Diamond Buttoning', 'Chrome Feet', 'Gold Feet', 'Wooden Feet',
   'Matching Headboard', 'USB Ports', 'Ottoman Storage', 'Side Drawers',
@@ -33,7 +31,7 @@ function buildInitialFabricColours(initialData) {
   return {}
 }
 
-export default function ProductForm({ categories, initialData = null }) {
+export default function ProductForm({ categories, availableFabrics = [], initialData = null }) {
   const router  = useRouter()
   const editing = !!initialData
   const topRef  = useRef(null)
@@ -54,7 +52,6 @@ export default function ProductForm({ categories, initialData = null }) {
     addonPrices:   initialData?.addonPrices || {},
   })
 
-  const [newFabricName, setNewFabricName] = useState('')
   const [slugLocked, setSlugLocked]       = useState(editing)
   const [errors, setErrors]               = useState({})
   const [status, setStatus]               = useState(null)
@@ -83,11 +80,24 @@ export default function ProductForm({ categories, initialData = null }) {
   }
 
   // Fabric & colour handlers
-  function addFabric() {
-    const name = newFabricName.trim()
-    if (!name || form.fabricColours[name] !== undefined) return
-    setForm(f => ({ ...f, fabricColours: { ...f.fabricColours, [name]: [] } }))
-    setNewFabricName('')
+  function toggleFabricSelection(fabricName, catalogImage) {
+    setForm(f => {
+      if (f.fabricColours[fabricName] !== undefined) {
+        // Deselect — remove colours and image
+        const updatedColours = { ...f.fabricColours }
+        const updatedImages  = { ...f.fabricImages }
+        delete updatedColours[fabricName]
+        delete updatedImages[fabricName]
+        return { ...f, fabricColours: updatedColours, fabricImages: updatedImages }
+      } else {
+        // Select — pre-fill image from catalog
+        return {
+          ...f,
+          fabricColours: { ...f.fabricColours, [fabricName]: [] },
+          fabricImages:  { ...f.fabricImages,  [fabricName]: catalogImage || '' },
+        }
+      }
+    })
   }
 
   function removeFabric(fabric) {
@@ -189,8 +199,6 @@ export default function ProductForm({ categories, initialData = null }) {
       setLoading(false)
     }
   }
-
-  const fabricList = Object.keys(form.fabricColours)
 
   return (
     <form onSubmit={handleSubmit} className={styles.formCard} noValidate>
@@ -296,121 +304,100 @@ export default function ProductForm({ categories, initialData = null }) {
           <label style={{ marginBottom: '0.5rem', display: 'block' }}>
             Fabrics &amp; Colours
             <span style={{ color: '#555', fontWeight: 400, fontSize: '0.75rem', marginLeft: 8 }}>
-              — each fabric has its own colour palette
+              — tick a fabric to include it, then pick its colours
             </span>
           </label>
 
-          <div style={{ border: '1px solid #2a2820', borderRadius: 6, overflow: 'hidden' }}>
-            {fabricList.length === 0 && (
-              <p style={{ padding: '1rem', color: '#555', fontSize: '0.85rem', margin: 0 }}>
-                No fabrics added yet. Add one below.
+          {availableFabrics.length === 0 ? (
+            <div style={{ padding: '1rem', background: '#141310', border: '1px solid #2a2820', borderRadius: 6 }}>
+              <p style={{ color: '#e8a030', fontSize: '0.85rem', margin: '0 0 0.5rem' }}>
+                No fabrics in the catalogue yet.
               </p>
-            )}
-
-            {fabricList.map((fabric, idx) => {
-              const selectedColours = form.fabricColours[fabric] || []
-              return (
-                <div key={fabric} style={{ borderBottom: idx < fabricList.length - 1 ? '1px solid #2a2820' : 'none' }}>
-                  {/* Fabric header */}
-                  <div style={{
-                    display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-                    padding: '0.65rem 1rem', background: '#1a1814', gap: 12,
-                  }}>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: 10, flex: 1 }}>
-                      {/* Fabric image preview / URL input */}
-                      <div style={{ flex: 1 }}>
-                        <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 6 }}>
-                          <span style={{ fontWeight: 600, color: '#c9a96e', fontSize: '0.9rem' }}>{fabric}</span>
-                          <span style={{ fontSize: '0.72rem', color: '#555' }}>
-                            {selectedColours.length} colour{selectedColours.length !== 1 ? 's' : ''}
-                          </span>
-                        </div>
-                        <SingleImageUploader
-                          value={form.fabricImages[fabric] || ''}
-                          onChange={url => setFabricImage(fabric, url)}
-                          placeholder={`${fabric} texture image`}
-                        />
-                      </div>
-                    </div>
-                    <button
-                      type="button"
-                      onClick={() => removeFabric(fabric)}
-                      style={{ color: '#e05555', background: 'none', border: '1px solid #e05555', borderRadius: 4, cursor: 'pointer', fontSize: '0.72rem', padding: '2px 8px', flexShrink: 0 }}
-                    >
-                      Remove
-                    </button>
-                  </div>
-
-                  {/* Colour checkboxes */}
-                  <div style={{
-                    padding: '0.75rem 1rem', background: '#0f0e0c',
-                    display: 'flex', flexWrap: 'wrap', gap: '0.4rem 0.6rem',
-                  }}>
-                    {ALL_COLOURS.map(colour => {
-                      const checked = selectedColours.includes(colour)
-                      return (
-                        <label
-                          key={colour}
-                          onClick={() => toggleFabricColour(fabric, colour)}
-                          style={{
-                            display: 'flex', alignItems: 'center', gap: 6,
-                            padding: '4px 8px', borderRadius: 6, cursor: 'pointer',
-                            border: checked ? '1px solid #c9a96e' : '1px solid #2a2820',
-                            background: checked ? '#1e1c18' : 'transparent',
-                            fontSize: '0.78rem', color: checked ? '#f5f0e8' : '#888',
-                            transition: 'all 0.12s', userSelect: 'none',
-                          }}
-                        >
-                          <span style={{
-                            width: 14, height: 14, borderRadius: 3, flexShrink: 0,
-                            background: COLOUR_HEX[colour] || '#888',
-                            border: '1px solid rgba(255,255,255,0.12)',
-                            display: 'inline-block',
-                          }} />
-                          {colour}
-                        </label>
-                      )
-                    })}
-                  </div>
-                </div>
-              )
-            })}
-
-            {/* Add fabric row */}
-            <div style={{
-              padding: '0.65rem 1rem', background: '#0a0908',
-              borderTop: fabricList.length > 0 ? '1px solid #2a2820' : 'none',
-              display: 'flex', gap: '0.5rem', alignItems: 'center',
-            }}>
-              <input
-                type="text"
-                list="fabric-suggestions"
-                placeholder="Type fabric name (e.g. Velvet) then press Add"
-                value={newFabricName}
-                onChange={e => setNewFabricName(e.target.value)}
-                onKeyDown={e => { if (e.key === 'Enter') { e.preventDefault(); addFabric() } }}
-                style={{
-                  flex: 1, background: '#141310', border: '1px solid #2a2820',
-                  borderRadius: 4, color: '#f5f0e8', padding: '0.45rem 0.75rem', fontSize: '0.85rem',
-                }}
-              />
-              <datalist id="fabric-suggestions">
-                {FABRIC_SUGGESTIONS.filter(f => !form.fabricColours[f]).map(f => <option key={f} value={f} />)}
-              </datalist>
-              <button
-                type="button"
-                onClick={addFabric}
-                disabled={!newFabricName.trim() || form.fabricColours[newFabricName.trim()] !== undefined}
-                style={{
-                  padding: '0.45rem 1rem', background: '#c9a96e', color: '#0f0e0c',
-                  border: 'none', borderRadius: 4, cursor: 'pointer', fontSize: '0.85rem',
-                  fontWeight: 600, whiteSpace: 'nowrap', opacity: (!newFabricName.trim() || form.fabricColours[newFabricName.trim()] !== undefined) ? 0.4 : 1,
-                }}
-              >
-                + Add Fabric
-              </button>
+              <a href="/admin/fabrics" style={{ color: '#c9a96e', fontSize: '0.82rem' }}>
+                Go to Fabrics → add some first
+              </a>
             </div>
-          </div>
+          ) : (
+            <div style={{ border: '1px solid #2a2820', borderRadius: 6, overflow: 'hidden' }}>
+              {availableFabrics.map((catalogFabric, idx) => {
+                const isSelected     = form.fabricColours[catalogFabric.name] !== undefined
+                const selectedColours = form.fabricColours[catalogFabric.name] || []
+                return (
+                  <div
+                    key={catalogFabric.id}
+                    style={{ borderBottom: idx < availableFabrics.length - 1 ? '1px solid #2a2820' : 'none' }}
+                  >
+                    {/* Fabric row — checkbox + thumbnail + name */}
+                    <div style={{
+                      display: 'flex', alignItems: 'center', gap: 12,
+                      padding: '0.65rem 1rem', background: isSelected ? '#1a1814' : '#0f0e0c',
+                      cursor: 'pointer',
+                    }}
+                      onClick={() => toggleFabricSelection(catalogFabric.name, catalogFabric.image)}
+                    >
+                      <input
+                        type="checkbox"
+                        checked={isSelected}
+                        onChange={() => {}}
+                        style={{ width: 16, height: 16, accentColor: '#c9a96e', cursor: 'pointer', flexShrink: 0 }}
+                      />
+                      {catalogFabric.image ? (
+                        <img
+                          src={catalogFabric.image}
+                          alt={catalogFabric.name}
+                          style={{ width: 40, height: 40, objectFit: 'cover', borderRadius: 4, border: '1px solid #2a2820', flexShrink: 0 }}
+                        />
+                      ) : (
+                        <div style={{ width: 40, height: 40, background: '#1a1814', border: '1px dashed #2a2820', borderRadius: 4, flexShrink: 0 }} />
+                      )}
+                      <span style={{ fontWeight: isSelected ? 600 : 400, color: isSelected ? '#c9a96e' : '#888', fontSize: '0.9rem' }}>
+                        {catalogFabric.name}
+                      </span>
+                      {isSelected && (
+                        <span style={{ fontSize: '0.72rem', color: '#555', marginLeft: 'auto' }}>
+                          {selectedColours.length} colour{selectedColours.length !== 1 ? 's' : ''} selected
+                        </span>
+                      )}
+                    </div>
+
+                    {/* Colour picker — only when fabric is selected */}
+                    {isSelected && (
+                      <div style={{
+                        padding: '0.75rem 1rem', background: '#0a0908',
+                        display: 'flex', flexWrap: 'wrap', gap: '0.4rem 0.6rem',
+                      }}>
+                        {ALL_COLOURS.map(colour => {
+                          const checked = selectedColours.includes(colour)
+                          return (
+                            <label
+                              key={colour}
+                              onClick={e => { e.stopPropagation(); toggleFabricColour(catalogFabric.name, colour) }}
+                              style={{
+                                display: 'flex', alignItems: 'center', gap: 6,
+                                padding: '4px 8px', borderRadius: 6, cursor: 'pointer',
+                                border: checked ? '1px solid #c9a96e' : '1px solid #2a2820',
+                                background: checked ? '#1e1c18' : 'transparent',
+                                fontSize: '0.78rem', color: checked ? '#f5f0e8' : '#888',
+                                transition: 'all 0.12s', userSelect: 'none',
+                              }}
+                            >
+                              <span style={{
+                                width: 14, height: 14, borderRadius: 3, flexShrink: 0,
+                                background: COLOUR_HEX[colour] || '#888',
+                                border: '1px solid rgba(255,255,255,0.12)',
+                                display: 'inline-block',
+                              }} />
+                              {colour}
+                            </label>
+                          )
+                        })}
+                      </div>
+                    )}
+                  </div>
+                )
+              })}
+            </div>
+          )}
         </div>
 
         {/* Add-ons with prices */}

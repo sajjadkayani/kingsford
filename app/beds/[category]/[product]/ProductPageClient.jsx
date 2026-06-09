@@ -212,9 +212,9 @@ export default function ProductPageClient({ cat, prod }) {
         >
           ✓
         </motion.div>
-        <h2 className={styles.successTitle}>Order Received</h2>
+        <h2 className={styles.successTitle}>Order Request Placed</h2>
         <p className={styles.successText}>
-          Thank you {form.name}. We will confirm within 24 hours.
+          Thank you {form.name}. We will email you a deposit invoice for <strong>£{Math.round(price / 2)}</strong> within 24 hours — production begins as soon as it&apos;s paid. Your bed will be ready in 3–4 weeks.
         </p>
         <div className={styles.successSummary}>
           {[
@@ -223,6 +223,7 @@ export default function ProductPageClient({ cat, prod }) {
             ["Fabric", selected.fabric],
             ["Colour", selected.colour],
             ["Total", `£${price}`],
+            ["Deposit due", `£${Math.round(price / 2)}`],
           ].map(([label, val], i) => (
             <motion.div
               key={label}
@@ -233,7 +234,7 @@ export default function ProductPageClient({ cat, prod }) {
             >
               <span>{label}</span>
               <span
-                className={label === "Total" ? styles.successPrice : undefined}
+                className={label === "Total" || label === "Deposit due" ? styles.successPrice : undefined}
               >
                 {val}
               </span>
@@ -409,11 +410,23 @@ export default function ProductPageClient({ cat, prod }) {
             </motion.div>
 
             <motion.div
-              className={styles.options}
+              className={styles.trustBadges}
               variants={fadeUp}
               initial="hidden"
               animate="visible"
               custom={2}
+            >
+              <span>✓ UK manufactured</span>
+              <span>✓ Made to order</span>
+              <span>✓ Free UK delivery</span>
+            </motion.div>
+
+            <motion.div
+              className={styles.options}
+              variants={fadeUp}
+              initial="hidden"
+              animate="visible"
+              custom={3}
             >
               {/* Size */}
               <div className={styles.optionRow}>
@@ -700,7 +713,7 @@ export default function ProductPageClient({ cat, prod }) {
               variants={fadeUp}
               initial="hidden"
               animate="visible"
-              custom={3}
+              custom={4}
             >
               <AnimatePresence mode="wait">
                 {!showOrderForm ? (
@@ -761,7 +774,10 @@ export default function ProductPageClient({ cat, prod }) {
                     exit={{ opacity: 0, y: -12 }}
                     transition={{ duration: 0.25 }}
                   >
-                    <h3 className={styles.formTitle}>Your Details</h3>
+                    <h3 className={styles.formTitle}>Place Your Order</h3>
+                    <p style={{ fontSize: '0.78rem', color: '#888', margin: '-0.25rem 0 0.85rem', lineHeight: 1.5 }}>
+                      We&apos;ll email you a deposit invoice for £{Math.round(price / 2)} within 24 hours. Production starts when it&apos;s paid.
+                    </p>
                     {[
                       {
                         label: "Full Name *",
@@ -776,7 +792,7 @@ export default function ProductPageClient({ cat, prod }) {
                         placeholder: "john@example.com",
                       },
                       {
-                        label: "Phone",
+                        label: "Phone *",
                         key: "phone",
                         type: "tel",
                         placeholder: "+44 7700 000000",
@@ -811,12 +827,12 @@ export default function ProductPageClient({ cat, prod }) {
                       <motion.button
                         className={`btn btn--primary ${styles.submitBtn}`}
                         onClick={handleSubmit}
-                        disabled={!form.name || !form.email || submitting}
+                        disabled={!form.name || !form.email || !form.phone || submitting}
                         whileTap={{ scale: 0.97 }}
                       >
                         {submitting
                           ? "Sending..."
-                          : `Confirm Order — £${price}`}
+                          : `Place Order Request — £${price}`}
                       </motion.button>
                       <motion.button
                         className={`btn btn--outline ${styles.cancelBtn}`}
@@ -836,7 +852,7 @@ export default function ProductPageClient({ cat, prod }) {
               variants={fadeUp}
               initial="hidden"
               animate="visible"
-              custom={4}
+              custom={5}
             >
               <p>{prod.description}</p>
             </motion.div>

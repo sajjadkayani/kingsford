@@ -253,6 +253,23 @@
   color: var(--color-cream-faint);
 }
 
+/* Trust badges row */
+.trustBadges {
+  display: flex;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+  padding: var(--space-3) 0 var(--space-4);
+  border-bottom: 1px solid var(--color-border);
+  margin-bottom: var(--space-2);
+}
+
+.trustBadges span {
+  font-size: 0.68rem;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  color: var(--color-cream-faint);
+}
+
 /* Options — all can be open simultaneously */
 .options {
   display: flex;
@@ -738,4 +755,32 @@
   .orderButtons {
     flex-direction: column;
   }
+}
+
+@media (max-width: 480px) {
+  .formButtons {
+    flex-direction: column;
+  }
+  .submitBtn,
+  .cancelBtn {
+    flex: none;
+    width: 100%;
+  }
+}
+
+@media (max-width: 360px) {
+  .orderForm {
+    padding: var(--space-4);
+  }
+  .bcCurrent {
+    max-width: 130px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: inline-block;
+    vertical-align: middle;
+  }
+  .priceAmount { font-size: 1.8rem; }
+  .successTitle { font-size: 1.8rem; }
+  .successSummary { padding: var(--space-4); }
 }

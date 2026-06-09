@@ -27,10 +27,12 @@ export default function ReviewsPageClient({ reviews = [], product = null }) {
     productSlug: productSlug || null,
     productName: productName || null,
   })
+  const [honeypot, setHoneypot] = useState('')
   const [submitted, setSubmitted] = useState(false)
   const [submitting, setSubmitting] = useState(false)
 
   const handleSubmit = async () => {
+    if (honeypot) return
     setSubmitting(true)
     try {
       await fetch('/api/reviews', {
@@ -208,6 +210,18 @@ export default function ReviewsPageClient({ reviews = [], product = null }) {
                         rows={5}
                       />
                     </div>
+
+                    {/* Honeypot — hidden from real users, catches bots */}
+                    <input
+                      type="text"
+                      name="website"
+                      value={honeypot}
+                      onChange={e => setHoneypot(e.target.value)}
+                      style={{ display: 'none' }}
+                      tabIndex={-1}
+                      autoComplete="off"
+                      aria-hidden="true"
+                    />
 
                     <button
                       className={`btn btn--primary ${styles.submitBtn}`}

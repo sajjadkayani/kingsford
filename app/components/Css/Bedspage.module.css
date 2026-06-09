@@ -174,3 +174,19 @@
   .rowHeader { flex-direction: column; align-items: flex-start; }
   .cardWrap { flex: 0 0 180px; }
 }
+
+@media (max-width: 360px) {
+  .heroStats {
+    flex-wrap: wrap;
+    gap: var(--space-2) var(--space-3);
+    justify-content: center;
+  }
+  .heroStatDivider { display: none; }
+  .cardWrap { flex: 0 0 160px; }
+  .viewAll {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+  }
+  .hero { padding: 110px 0 3rem; }
+}

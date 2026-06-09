@@ -202,3 +202,18 @@
   .cta { display: none; }
   .burger { display: flex; }
 }
+
+@media (max-width: 360px) {
+  .inner {
+    padding: 0 var(--space-4);
+    height: 68px;
+  }
+  .logoText { font-size: 1.3rem; }
+  .logoSub { letter-spacing: 0.18em; font-size: 0.6rem; }
+}
+
+@media (max-width: 300px) {
+  .inner { padding: 0 12px; }
+  .logoText { font-size: 1.15rem; }
+  .logoSub { display: none; }
+}

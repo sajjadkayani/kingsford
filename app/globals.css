@@ -166,7 +166,7 @@ button {
 }
 .container-1 {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1350px;
   margin: 0 auto;
   padding: 0 10px;
 }
@@ -358,5 +358,32 @@ button {
 
   50% {
     opacity: 1;
+  }
+}
+
+/* ============================================
+   MICRO-SCREEN OVERRIDES (≤ 360 px)
+   Target: Galaxy Fold, small budget phones
+   ============================================ */
+
+@media (max-width: 360px) {
+  .container,
+  .container--narrow {
+    padding: 0 var(--space-4); /* 16 px each side */
+  }
+
+  .btn {
+    padding: var(--space-3) var(--space-5);
+    font-size: 0.7rem;
+    white-space: normal;
+    text-align: center;
+    line-height: 1.4;
+  }
+}
+
+@media (max-width: 300px) {
+  .container,
+  .container--narrow {
+    padding: 0 var(--space-3); /* 12 px each side */
   }
 }

@@ -63,6 +63,7 @@ export default function Footer() {
                 <li><Link href="/faq" className={styles.link}>FAQ</Link></li>
                 <li><Link href="/reviews" className={styles.link}>Reviews</Link></li>
                 <li><Link href="/delivery" className={styles.link}>Delivery Info</Link></li>
+                <li><Link href="/returns" className={styles.link}>Returns &amp; After-Care</Link></li>
                 <li><Link href="/privacy" className={styles.link}>Privacy Policy</Link></li>
                 <li><Link href="/terms" className={styles.link}>Terms &amp; Conditions</Link></li>
               </ul>

@@ -27,6 +27,7 @@ export function middleware(request) {
     const needsAuth =
       pathname.startsWith('/api/products') ||
       pathname.startsWith('/api/categories') ||
+      pathname.startsWith('/api/fabrics') ||
       pathname.startsWith('/api/reviews/') ||
       pathname === '/api/upload'
 
@@ -45,6 +46,8 @@ export const config = {
     '/api/products/:path*',
     '/api/categories',
     '/api/categories/:path*',
+    '/api/fabrics',
+    '/api/fabrics/:path*',
     '/api/reviews/:path*',
     '/api/upload',
   ],

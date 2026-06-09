@@ -19,6 +19,7 @@ export default function AdminLayout({ children }) {
           <Link href="/admin" className={styles.navLink}>Dashboard</Link>
           <Link href="/admin/products" className={styles.navLink}>Products</Link>
           <Link href="/admin/products/new" className={`${styles.navLink} ${styles.navNew}`}>+ Add Product</Link>
+          <Link href="/admin/fabrics" className={styles.navLink}>Fabrics</Link>
           <Link href="/admin/categories" className={styles.navLink}>Categories</Link>
           <Link href="/admin/orders" className={styles.navLink}>Orders</Link>
           <Link href="/admin/reviews" className={styles.navLink}>Reviews</Link>

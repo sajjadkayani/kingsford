@@ -653,3 +653,11 @@
   .styleGrid { grid-template-columns: 1fr; }
   .fabricGrid { grid-template-columns: 1fr 1fr; }
 }
+
+@media (max-width: 360px) {
+  .fabricGrid { grid-template-columns: 1fr; }
+  .stepCard { padding: var(--space-4); }
+  .successDetails { padding: var(--space-4); }
+  .sizeBtnLabel { min-width: 70px; }
+  .legsGrid { flex-wrap: wrap; }
+}

@@ -1,5 +1,7 @@
 import Link from 'next/link'
 import { getAllCategories } from '../../../lib/data'
+import connectDB from '../../../lib/mongodb'
+import Fabric from '../../../models/Fabric'
 import ProductForm from '../ProductForm'
 import styles from '../../admin.module.css'
 
@@ -7,7 +9,12 @@ export const dynamic = 'force-dynamic'
 export const metadata = { title: 'Add Product | Admin' }
 
 export default async function NewProductPage() {
-  const categories = await getAllCategories()
+  await connectDB()
+  const [categories, rawFabrics] = await Promise.all([
+    getAllCategories(),
+    Fabric.find().sort({ name: 1 }).lean(),
+  ])
+  const availableFabrics = rawFabrics.map(f => ({ id: f._id.toString(), name: f.name, image: f.image || '' }))
 
   return (
     <>
@@ -25,7 +32,7 @@ export default async function NewProductPage() {
           </Link>
         </div>
       ) : (
-        <ProductForm categories={categories} />
+        <ProductForm categories={categories} availableFabrics={availableFabrics} />
       )}
     </>
   )

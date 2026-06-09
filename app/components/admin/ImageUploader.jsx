@@ -26,6 +26,8 @@ export function SingleImageUploader({ value, onChange, placeholder = 'Fabric ima
   async function handleFile(file) {
     if (!file) return
     setError('')
+    if (!file.type.startsWith('image/')) { setError('Please select an image file'); return }
+    if (file.size > 8 * 1024 * 1024) { setError('File too large — max 8 MB'); return }
     try {
       const url = await uploadFile(file, setUploading)
       onChange(url)
@@ -130,6 +132,8 @@ export function MultiImageUploader({ value = [], onChange }) {
     setUploading(true)
     try {
       for (const file of Array.from(files)) {
+        if (!file.type.startsWith('image/')) { setError(`${file.name}: not an image`); continue }
+        if (file.size > 8 * 1024 * 1024) { setError(`${file.name}: too large (max 8 MB)`); continue }
         const url = await uploadFile(file, () => {})
         uploaded.push(url)
       }

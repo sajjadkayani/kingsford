@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation'
 import { getAllCategories } from '../../../../lib/data'
 import connectDB from '../../../../lib/mongodb'
 import Product from '../../../../models/Product'
+import Fabric from '../../../../models/Fabric'
 import ProductForm from '../../ProductForm'
 import styles from '../../../admin.module.css'
 
@@ -11,10 +12,14 @@ export default async function EditProductPage({ params }) {
   const { id } = await params
   await connectDB()
 
-  const raw = await Product.findById(id).lean()
+  const [raw, rawFabrics, categories] = await Promise.all([
+    Product.findById(id).lean(),
+    Fabric.find().sort({ name: 1 }).lean(),
+    getAllCategories(),
+  ])
   if (!raw) notFound()
 
-  const categories = await getAllCategories()
+  const availableFabrics = rawFabrics.map(f => ({ id: f._id.toString(), name: f.name, image: f.image || '' }))
 
   const product = {
     id: raw._id.toString(),
@@ -42,7 +47,7 @@ export default async function EditProductPage({ params }) {
       <div className={styles.pageHeader}>
         <h1 className={styles.pageTitle}>Edit — {product.name}</h1>
       </div>
-      <ProductForm categories={categories} initialData={product} />
+      <ProductForm categories={categories} availableFabrics={availableFabrics} initialData={product} />
     </>
   )
 }

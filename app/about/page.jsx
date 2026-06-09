@@ -1,17 +1,18 @@
-import Link from 'next/link'
-import styles from '../components/Css/About.module.css'
+import Link from "next/link";
+import styles from "../components/Css/About.module.css";
+import Image from "next/image";
+import about from "../../public/about.png";
 
 export const metadata = {
-  title: 'About Us | UK Bed Manufacturer | Kingsford Sleep',
+  title: "About Us | UK Bed Manufacturer | Kingsford Sleep",
   description:
-    'Kingsford Sleep is a UK bed manufacturer specialising in handcrafted, made to order beds. Learn about our factory, our craft and our commitment to quality.',
-  alternates: { canonical: '/about' },
-}
+    "Kingsford Sleep is a UK bed manufacturer specialising in handcrafted, made to order beds. Learn about our factory, our craft and our commitment to quality.",
+  alternates: { canonical: "/about" },
+};
 
 export default function AboutPage() {
   return (
     <div className={styles.page}>
-
       {/* Hero */}
       <div className={styles.hero}>
         <div className="container--narrow">
@@ -21,9 +22,10 @@ export default function AboutPage() {
             Built by hand. <em>Built to last.</em>
           </h1>
           <p className={styles.intro}>
-            Kingsford Sleep was built on a simple belief — that a bed should be made properly.
-            Not assembled from flat packs, not shipped from overseas, not built to a price point.
-            Built by skilled hands, in a real factory, with materials that last.
+            Kingsford Sleep was built on a simple belief — that a bed should be
+            made properly. Not assembled from flat packs, not shipped from
+            overseas, not built to a price point. Built by skilled hands, in a
+            real factory, with materials that last.
           </p>
         </div>
       </div>
@@ -34,8 +36,13 @@ export default function AboutPage() {
           <div className={styles.storyGrid}>
             <div className={styles.storyImage}>
               <div className={styles.imagePlaceholder}>
-                <span>Factory Photo</span>
-                <span className={styles.imageSub}>Coming soon</span>
+                <Image
+                  src={about}
+                  alt=""
+                  fill
+                  quality={90}
+                  style={{ objectFit: "cover", objectPosition: "center" }}
+                />
               </div>
             </div>
             <div className={styles.storyContent}>
@@ -45,14 +52,15 @@ export default function AboutPage() {
                 Made in the <em>United Kingdom</em>
               </h2>
               <p className={styles.storyText}>
-                Every bed that carries the Kingsford Sleep name is made in our UK factory
-                by a team of skilled craftsmen who take real pride in their work.
-                We do not outsource, we do not import, we do not cut corners.
+                Every bed that carries the Kingsford Sleep name is made in our
+                UK factory by a team of skilled craftsmen who take real pride in
+                their work. We do not outsource, we do not import, we do not cut
+                corners.
               </p>
               <p className={styles.storyText}>
-                When you order from us, your bed does not exist yet. It is built for you,
-                to your specifications, from the fabric you chose to the size you need.
-                That is what made to order really means.
+                When you order from us, your bed does not exist yet. It is built
+                for you, to your specifications, from the fabric you chose to
+                the size you need. That is what made to order really means.
               </p>
             </div>
           </div>
@@ -71,10 +79,22 @@ export default function AboutPage() {
           </div>
           <div className={styles.valuesGrid}>
             {[
-              { title: 'Honest Pricing', text: 'No inflated RRPs. No fake discounts. Factory direct means you pay what a bed is actually worth.' },
-              { title: 'Real Craftsmanship', text: 'Every joint, every stitch, every finish is done by hand by people who know what they are doing.' },
-              { title: 'Your Specification', text: 'Your size. Your fabric. Your colour. We do not sell beds off a shelf. We build them to order.' },
-              { title: 'Personal Service', text: 'You will speak to a real person. WhatsApp us, email us, call us. We are here throughout.' },
+              {
+                title: "Honest Pricing",
+                text: "No inflated RRPs. No fake discounts. Factory direct means you pay what a bed is actually worth.",
+              },
+              {
+                title: "Real Craftsmanship",
+                text: "Every joint, every stitch, every finish is done by hand by people who know what they are doing.",
+              },
+              {
+                title: "Your Specification",
+                text: "Your size. Your fabric. Your colour. We do not sell beds off a shelf. We build them to order.",
+              },
+              {
+                title: "Personal Service",
+                text: "You will speak to a real person. WhatsApp us, email us, call us. We are here throughout.",
+              },
             ].map((value) => (
               <div key={value.title} className={styles.valueCard}>
                 <h3 className={styles.valueTitle}>{value.title}</h3>
@@ -92,12 +112,15 @@ export default function AboutPage() {
             Ready to build your <em>perfect bed?</em>
           </h2>
           <div className={styles.ctaButtons}>
-            <Link href="/configure" className="btn btn--primary">Build Your Bed</Link>
-            <Link href="/contact" className="btn btn--outline">Get in Touch</Link>
+            <Link href="/configure" className="btn btn--primary">
+              Build Your Bed
+            </Link>
+            <Link href="/contact" className="btn btn--outline">
+              Get in Touch
+            </Link>
           </div>
         </div>
       </div>
-
     </div>
-  )
+  );
 }
