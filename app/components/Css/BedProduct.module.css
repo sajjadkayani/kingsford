@@ -698,10 +698,9 @@
 }
 
 @media (max-width: 1000px) {
-.orderButtons {
+  .orderButtons {
     flex-direction: column;
   }
-
 }
 @media (max-width: 900px) {
   .layout {
@@ -718,13 +717,6 @@
     width: 100%;
     height: auto;
     aspect-ratio: 4 / 3;
-  }
-
-  /* Horizontal thumbnail strip below main image */
-  .thumbCol {
-    width: 100%;
-    height: 72px;
-    flex-direction: row;
   }
 
   .thumbnails {
@@ -746,8 +738,15 @@
     background: linear-gradient(to right, transparent, var(--color-bg-primary));
   }
 
+  .thumbCol {
+    width: 100%;
+    height: 72px;
+    flex-direction: row;
+    overflow: hidden; /* ADD THIS */
+  }
+
   .thumb {
-    width: 80px;
+    width: 64px; /* shrink from 80px */
     height: 60px;
     flex-shrink: 0;
   }
@@ -757,7 +756,46 @@
   }
 }
 
+/* ── Product page mobile fixes ── */
+@media (max-width: 768px) {
+  .orderBtn,
+  .waBtn {
+    padding: var(--space-3) var(--space-4); /* slightly less chunky */
+  }
+}
+
+/* Prevent long colour/fabric names overflowing the option toggle */
+@media (max-width: 640px) {
+  .optionToggleLeft {
+    min-width: 0;
+    flex: 1;
+    overflow: hidden;
+  }
+  .optionToggleValue {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    min-width: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .mainImageWrap {
+    aspect-ratio: 3 / 2; /* was 4/3 — less tall on narrow screens */
+  }
+}
+
 @media (max-width: 480px) {
+  .optionToggle {
+    padding: var(--space-3) var(--space-4);
+  }
+  .optionPanel {
+    padding: var(--space-3) var(--space-4);
+  }
+  .trustBadges {
+    gap: var(--space-3);
+    padding: var(--space-2) 0 var(--space-3);
+  }
   .formButtons {
     flex-direction: column;
   }
@@ -769,6 +807,9 @@
 }
 
 @media (max-width: 360px) {
+  .breadcrumb {
+    padding-top: 80px;
+  }
   .orderForm {
     padding: var(--space-4);
   }
@@ -780,7 +821,22 @@
     display: inline-block;
     vertical-align: middle;
   }
-  .priceAmount { font-size: 1.8rem; }
-  .successTitle { font-size: 1.8rem; }
-  .successSummary { padding: var(--space-4); }
+  .priceAmount {
+    font-size: 1.8rem;
+  }
+  .successTitle {
+    font-size: 1.8rem;
+  }
+  .successSummary {
+    padding: var(--space-4);
+  }
+  .priceRow {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-1);
+  }
+  .orderBtn,
+  .waBtn {
+    padding: var(--space-3) var(--space-4);
+  }
 }
