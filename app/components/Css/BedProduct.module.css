@@ -697,16 +697,22 @@
   font-size: 1.2rem !important;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1024px) {
   .orderButtons {
     flex-direction: column;
+  }
+  .layout {
+    gap: 5px;
   }
 }
 @media (max-width: 900px) {
   .layout {
     grid-template-columns: 1fr;
   }
-
+  .thumbCol {
+    max-width: 90vw;
+    overflow: auto; /* ADD THIS */
+  }
   .imageCol {
     position: static;
     flex-direction: column;
@@ -742,7 +748,7 @@
     width: 100%;
     height: 72px;
     flex-direction: row;
-    overflow: hidden; /* ADD THIS */
+    overflow: auto; /* ADD THIS */
   }
 
   .thumb {
@@ -761,6 +767,10 @@
   .orderBtn,
   .waBtn {
     padding: var(--space-3) var(--space-4); /* slightly less chunky */
+  }
+  .thumbCol {
+    max-width: 90vw;
+    overflow: auto; /* ADD THIS */
   }
 }
 
@@ -804,9 +814,18 @@
     flex: none;
     width: 100%;
   }
+  .thumbCol {
+    max-width: 400px;
+    overflow: auto; /* ADD THIS */
+  }
 }
 
 @media (max-width: 360px) {
+  .thumbCol {
+    max-width: 300px;
+    overflow: auto; /* ADD THIS */
+  }
+
   .breadcrumb {
     padding-top: 80px;
   }
