@@ -357,7 +357,7 @@
   border: 1px solid var(--color-border);
   border-radius: var(--radius-sm);
   font-family: var(--font-body);
-  font-size: 0.82rem;
+  font-size: 0.9rem;
   color: var(--color-cream-muted);
   cursor: pointer;
   transition: all var(--transition-fast);
@@ -434,7 +434,7 @@
   border: 1px solid var(--color-border);
   border-radius: var(--radius-sm);
   font-family: var(--font-body);
-  font-size: 0.78rem;
+  font-size: 0.9rem;
   color: var(--color-cream-muted);
   cursor: pointer;
   transition: all var(--transition-fast);
@@ -516,7 +516,7 @@
 }
 
 .addonPrice {
-  font-size: 0.78rem;
+  font-size: 0.9rem;
   color: var(--color-gold);
 }
 

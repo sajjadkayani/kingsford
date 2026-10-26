@@ -13,7 +13,7 @@
   justify-content: center;
 }
 
-/* ── Bed container — handles size scaling ── */
+/* ── Bed container ── */
 .bedContainer {
   position: relative;
   width: 90%;
@@ -21,9 +21,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  transform: scaleX(var(--scale));
-  transform-origin: center center;
-  transition: transform 400ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* ── Actual bed image ── */
@@ -128,7 +125,7 @@
 /* ── Style label ── */
 .label {
   position: absolute;
-  bottom: 40px;
+  top: 20px;
   left: 50%;
   transform: translateX(-50%);
   font-size: 1rem;
@@ -239,4 +236,27 @@
   height: 100%;
   object-fit: contain;
   display: block;
+}
+@media (max-width: 500px) {
+  .measureSvgW {
+    height: 7px;
+    bottom: 5px;
+  }
+  .measureSvgH {
+    right: 4px;
+    top: 6%;
+    width: 7px;
+  }
+  .measureW {
+    bottom: 4px;
+    font-size: 14px;
+  }
+  .measureH {
+    transform: translateY(-50%) rotate(90deg);
+    font-size: 14px;
+  }
+  .label {
+    top: 10px;
+    font-size: 13px;
+  }
 }

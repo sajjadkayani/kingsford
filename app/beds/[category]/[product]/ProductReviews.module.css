@@ -12,23 +12,43 @@
   margin-bottom: 2rem;
 }
 
-.headerLeft { display: flex; flex-direction: column; gap: 0.5rem; }
+.headerLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
 
 .title {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: "Cormorant Garamond", serif;
   font-size: 1.6rem;
   font-weight: 400;
   color: #f5f0e8;
   margin: 0;
 }
 
-.aggregate { display: flex; align-items: center; gap: 0.5rem; }
+.aggregate {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
 
-.stars { display: flex; gap: 2px; }
-.starOn  { color: #c9a96e; font-size: 0.9rem; }
-.starOff { color: #333;    font-size: 0.9rem; }
+.stars {
+  display: flex;
+  gap: 2px;
+}
+.starOn {
+  color: #c9a96e;
+  font-size: 0.9rem;
+}
+.starOff {
+  color: #333;
+  font-size: 0.9rem;
+}
 
-.aggregateText { font-size: 0.82rem; color: #888; }
+.aggregateText {
+  font-size: 0.9rem;
+  color: #888;
+}
 
 .writeBtn {
   display: inline-flex;
@@ -39,12 +59,17 @@
   font-size: 0.8rem;
   color: #c9a96e;
   text-decoration: none;
-  transition: border-color 0.15s, background 0.15s;
+  transition:
+    border-color 0.15s,
+    background 0.15s;
   white-space: nowrap;
   flex-shrink: 0;
 }
 
-.writeBtn:hover { border-color: #c9a96e; background: #1a1510; }
+.writeBtn:hover {
+  border-color: #c9a96e;
+  background: #1a1510;
+}
 
 /* Empty state */
 .empty {
@@ -55,12 +80,20 @@
   border-radius: 10px;
 }
 
-.emptyText    { font-size: 0.95rem; color: #888; margin: 0 0 0.3rem; }
-.emptySubText { font-size: 0.82rem; color: #555; margin: 0 0 1.25rem; }
+.emptyText {
+  font-size: 0.95rem;
+  color: #888;
+  margin: 0 0 0.3rem;
+}
+.emptySubText {
+  font-size: 0.9rem;
+  color: #555;
+  margin: 0 0 1.25rem;
+}
 
 .emptyBtn {
   display: inline-block;
-  font-size: 0.82rem;
+  font-size: 0.9rem;
   color: #c9a96e;
   text-decoration: none;
   border-bottom: 1px solid #c9a96e40;
@@ -68,7 +101,9 @@
   transition: border-color 0.15s;
 }
 
-.emptyBtn:hover { border-color: #c9a96e; }
+.emptyBtn:hover {
+  border-color: #c9a96e;
+}
 
 /* Reviews grid */
 .grid {
@@ -88,9 +123,15 @@
   transition: border-color 0.2s;
 }
 
-.card:hover { border-color: #2a2820; }
+.card:hover {
+  border-color: #2a2820;
+}
 
-.cardTop { display: flex; align-items: center; justify-content: space-between; }
+.cardTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
 .verified {
   font-size: 0.7rem;
@@ -109,7 +150,11 @@
   flex: 1;
 }
 
-.cardBottom { display: flex; align-items: center; gap: 0.65rem; }
+.cardBottom {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
 
 .avatar {
   width: 32px;
@@ -127,7 +172,7 @@
 
 .name {
   display: block;
-  font-size: 0.82rem;
+  font-size: 0.9rem;
   font-weight: 500;
   color: #f5f0e8;
 }
@@ -139,6 +184,10 @@
 }
 
 @media (max-width: 640px) {
-  .grid { grid-template-columns: 1fr; }
-  .header { flex-direction: column; }
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .header {
+    flex-direction: column;
+  }
 }

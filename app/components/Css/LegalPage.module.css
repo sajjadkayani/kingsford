@@ -19,17 +19,25 @@
   color: var(--color-gold);
 }
 
-.goldLine { width: 36px; height: 1px; background: var(--color-gold); margin: 0.75rem auto; }
+.goldLine {
+  width: 36px;
+  height: 1px;
+  background: var(--color-gold);
+  margin: 0.75rem auto;
+}
 
 .heroTitle {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: "Cormorant Garamond", serif;
   font-size: clamp(2.5rem, 5vw, 4rem);
   font-weight: 300;
   color: var(--color-cream);
   margin: 0 0 1rem;
 }
 
-.heroTitle em { font-style: italic; color: var(--color-gold); }
+.heroTitle em {
+  font-style: italic;
+  color: var(--color-gold);
+}
 
 .heroSubtitle {
   font-size: 0.95rem;
@@ -41,13 +49,15 @@
 }
 
 .heroMeta {
-  font-size: 0.78rem;
+  font-size: 0.9rem;
   color: #555;
   margin-top: 1rem;
 }
 
 /* ── Content ── */
-.content { padding: 4rem 0; }
+.content {
+  padding: 4rem 0;
+}
 
 .layout {
   display: grid;
@@ -75,12 +85,14 @@
 }
 
 .sideNavLink {
-  font-size: 0.82rem;
+  font-size: 0.9rem;
   color: var(--color-cream-muted);
   text-decoration: none;
   padding: 0.35rem 0.75rem;
   border-left: 2px solid transparent;
-  transition: color 0.15s, border-color 0.15s;
+  transition:
+    color 0.15s,
+    border-color 0.15s;
 }
 
 .sideNavLink:hover {
@@ -89,12 +101,17 @@
 }
 
 /* Body */
-.body { display: flex; flex-direction: column; gap: 3rem; }
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
 
-.section {}
+.section {
+}
 
 .sectionTitle {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: "Cormorant Garamond", serif;
   font-size: 1.5rem;
   font-weight: 400;
   color: var(--color-cream);
@@ -165,17 +182,28 @@
   margin: 0;
 }
 
-.contactBox p, .contactBox a {
+.contactBox p,
+.contactBox a {
   font-size: 0.85rem;
   color: var(--color-cream-muted);
   margin: 0;
 }
 
-.contactBox a { color: var(--color-gold); text-decoration: none; }
-.contactBox a:hover { text-decoration: underline; }
+.contactBox a {
+  color: var(--color-gold);
+  text-decoration: none;
+}
+.contactBox a:hover {
+  text-decoration: underline;
+}
 
 /* ── Responsive ── */
 @media (max-width: 768px) {
-  .layout { grid-template-columns: 1fr; gap: 2rem; }
-  .sideNav { display: none; }
+  .layout {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .sideNav {
+    display: none;
+  }
 }

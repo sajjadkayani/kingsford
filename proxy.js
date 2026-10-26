@@ -5,7 +5,7 @@ function isAuthed(request) {
   return session?.value === process.env.ADMIN_SECRET
 }
 
-export function middleware(request) {
+export function proxy(request) {
   const { pathname } = request.nextUrl
   const method = request.method
 

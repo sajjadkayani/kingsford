@@ -41,9 +41,9 @@ export default function Footer() {
             <div className={styles.linkGroup}>
               <h3 className={styles.linkGroupTitle}>Collection</h3>
               <ul className={styles.linkList}>
-                <li><Link href="/beds/ottoman-storage-bed" className={styles.link}>Ottoman Storage Bed</Link></li>
-                <li><Link href="/beds/panel-bed-frame" className={styles.link}>Panel Bed Frame</Link></li>
-                <li><Link href="/beds/wingback-bed-frame" className={styles.link}>Wingback Bed Frame</Link></li>
+                <li><Link href="/beds/ottoman" className={styles.link}>Ottoman Storage Beds</Link></li>
+                <li><Link href="/beds/panel" className={styles.link}>Panel Bed Frames</Link></li>
+                <li><Link href="/beds/wingback" className={styles.link}>Wingback Bed Frames</Link></li>
                 <li><Link href="/beds" className={styles.link}>View All Beds</Link></li>
               </ul>
             </div>

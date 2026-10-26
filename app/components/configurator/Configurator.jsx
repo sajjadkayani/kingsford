@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, Suspense } from "react";
+import { useState, useRef, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import BedVisual from "./BedVisual/BedVisual";
 import rules from "../data/configurator-rules.json";
@@ -85,7 +85,13 @@ function ConfiguratorInner() {
   const preCategory = searchParams.get("category");
   const preProduct = searchParams.get("product");
 
+  const topRef = useRef(null);
   const [step, setStep] = useState(1);
+
+  const goToStep = (n) => {
+    setStep(n);
+    topRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
   const [config, setConfig] = useState({
     size: "single", // ← default size
     style: preCategory || null,
@@ -201,7 +207,7 @@ function ConfiguratorInner() {
               <div key={s.id} className={styles.progressItem}>
                 <button
                   className={`${styles.stepDot} ${step === s.id ? styles.stepDotActive : ""} ${step > s.id ? styles.stepDotDone : ""}`}
-                  onClick={() => step > s.id && setStep(s.id)}
+                  onClick={() => step > s.id && goToStep(s.id)}
                   disabled={step <= s.id}
                 >
                   {step > s.id ? (
@@ -237,7 +243,7 @@ function ConfiguratorInner() {
       {/* Main layout */}
       <div className={styles.main}>
         <div className="container">
-          <div className={styles.layout}>
+          <div className={styles.layout} ref={topRef}>
             {/* LEFT — SVG bed visual */}
             <div className={styles.visualCol}>
               <BedVisual
@@ -617,7 +623,7 @@ function ConfiguratorInner() {
                   {step > 1 && (
                     <button
                       className={`btn btn--outline ${styles.backBtn}`}
-                      onClick={() => setStep((s) => s - 1)}
+                      onClick={() => goToStep(step - 1)}
                     >
                       ← Back
                     </button>
@@ -625,7 +631,7 @@ function ConfiguratorInner() {
                   {step < 6 && (
                     <button
                       className={`btn btn--primary ${styles.nextBtn} ${!canProceed() ? styles.nextBtnDisabled : ""}`}
-                      onClick={() => canProceed() && setStep((s) => s + 1)}
+                      onClick={() => canProceed() && goToStep(step + 1)}
                       disabled={!canProceed()}
                     >
                       Continue →

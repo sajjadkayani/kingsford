@@ -159,24 +159,6 @@
       "storage": "none",
       "showStorage": false,
       "addons": ["chrome-feet", "gold-feet", "usb-ports"]
-    },
-    "low-profile": {
-      "label": "Low Profile",
-      "tagline": "Minimal design, maximum impact",
-      "basePrice": 499,
-      "availableSizes": [
-        "single",
-        "small-double",
-        "double",
-        "king",
-        "super-king"
-      ],
-      "fabrics": ["velvet", "linen", "faux-leather", "chenille"],
-      "headboards": ["classic-low", "platform"],
-      "legs": ["chrome", "gold", "wooden" ,"default"],
-      "storage": "none",
-      "showStorage": false,
-      "addons": ["gold-feet", "chrome-feet", "usb-ports"]
     }
   },
 

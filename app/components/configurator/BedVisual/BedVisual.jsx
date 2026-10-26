@@ -111,18 +111,27 @@ export default function BedVisual({ config }) {
         ? `/beds/${style}.png`
         : null;
 
-  // Re-run whenever colour or image changes
+  // Hide canvas immediately when imageSrc changes so stale recoloured image doesn't linger
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (canvas) canvas.style.display = "none";
+  }, [imageSrc]);
+
+  // Re-run whenever colour changes (image already loaded)
   useEffect(() => {
     const canvas = canvasRef.current;
     const img = srcImgRef.current;
     if (!canvas || !img) return;
     if (img.complete && img.naturalWidth) {
       recolourCanvas(canvas, img, colourHex);
+      canvas.style.display = colourHex ? "block" : "none";
     }
   }, [colourHex, imageSrc]);
 
   const handleLoad = (e) => {
-    recolourCanvas(canvasRef.current, e.target, colourHex);
+    const canvas = canvasRef.current;
+    recolourCanvas(canvas, e.target, colourHex);
+    if (canvas) canvas.style.display = colourHex ? "block" : "none";
   };
 
   const SIZE_DIMENSIONS = {
@@ -156,7 +165,7 @@ export default function BedVisual({ config }) {
             <canvas
               ref={canvasRef}
               className={styles.bedCanvas}
-              style={{ display: colourHex ? "block" : "none" }}
+              style={{ display: "none" }}
             />
             {/* Plain image: shown before any colour is picked */}
             <img

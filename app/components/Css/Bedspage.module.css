@@ -29,7 +29,10 @@
   font-weight: 300;
 }
 
-.title em { font-style: italic; color: var(--color-gold); }
+.title em {
+  font-style: italic;
+  color: var(--color-gold);
+}
 
 .intro {
   font-size: 1rem;
@@ -45,7 +48,7 @@
   align-items: center;
   justify-content: center;
   gap: 1.5rem;
-  font-size: 0.78rem;
+  font-size: 0.9rem;
   color: #666;
 }
 
@@ -55,10 +58,15 @@
   background: #2a2820;
 }
 
-.heroStatValue { color: var(--color-gold); font-weight: 500; }
+.heroStatValue {
+  color: var(--color-gold);
+  font-weight: 500;
+}
 
 /* ── Content ── */
-.content { padding: 4rem 0; }
+.content {
+  padding: 4rem 0;
+}
 
 .categories {
   display: flex;
@@ -78,7 +86,7 @@
   position: absolute;
   top: -0.3em;
   right: -0.05em;
-  font-family: 'Cormorant Garamond', serif;
+  font-family: "Cormorant Garamond", serif;
   font-size: clamp(8rem, 16vw, 14rem);
   font-weight: 300;
   color: var(--color-gold);
@@ -124,7 +132,7 @@
 }
 
 .categoryDesc {
-  font-size: 0.82rem;
+  font-size: 0.9rem;
   font-weight: 300;
   color: var(--color-cream-muted);
   max-width: 420px;
@@ -146,7 +154,9 @@
   text-decoration: none;
 }
 
-.viewAll:hover { gap: 0.65rem; }
+.viewAll:hover {
+  gap: 0.65rem;
+}
 
 /* ── Product row ── */
 .productRow {
@@ -160,9 +170,16 @@
   scrollbar-color: var(--color-gold-muted) transparent;
 }
 
-.productRow::-webkit-scrollbar { height: 3px; }
-.productRow::-webkit-scrollbar-track { background: transparent; }
-.productRow::-webkit-scrollbar-thumb { background: var(--color-gold-muted); border-radius: 999px; }
+.productRow::-webkit-scrollbar {
+  height: 3px;
+}
+.productRow::-webkit-scrollbar-track {
+  background: transparent;
+}
+.productRow::-webkit-scrollbar-thumb {
+  background: var(--color-gold-muted);
+  border-radius: 999px;
+}
 
 .cardWrap {
   flex: 0 0 calc(25% - 0.75rem);
@@ -171,8 +188,13 @@
 
 /* ── Responsive ── */
 @media (max-width: 768px) {
-  .rowHeader { flex-direction: column; align-items: flex-start; }
-  .cardWrap { flex: 0 0 180px; }
+  .rowHeader {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .cardWrap {
+    flex: 0 0 180px;
+  }
 }
 
 @media (max-width: 360px) {
@@ -181,12 +203,18 @@
     gap: var(--space-2) var(--space-3);
     justify-content: center;
   }
-  .heroStatDivider { display: none; }
-  .cardWrap { flex: 0 0 160px; }
+  .heroStatDivider {
+    display: none;
+  }
+  .cardWrap {
+    flex: 0 0 160px;
+  }
   .viewAll {
     overflow: hidden;
     text-overflow: ellipsis;
     max-width: 100%;
   }
-  .hero { padding: 110px 0 3rem; }
+  .hero {
+    padding: 110px 0 3rem;
+  }
 }
